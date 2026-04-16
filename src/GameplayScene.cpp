@@ -7,6 +7,8 @@
 #include "Profiling.h"
 #include <raymath.h>
 
+namespace Ralph {
+
 GameplayScene::GameplayScene(Game* g) : game(g) {
     player = std::make_unique<Player>(ResourceManager::Instance().GetTexture("resources/Ralph.png"));
     freezeTimer = 0;
@@ -69,6 +71,9 @@ void GameplayScene::TriggerImpact(float duration, float intensity, float flash) 
     shakeTimer = duration + 0.1f;
     shakeIntensity = intensity;
     flashAlpha = flash;
+    
+    // Dispara evento via Event Bus
+    EventManager::Instance().Emit({EventType::PLAYER_DAMAGED, "", intensity});
 }
 
 void GameplayScene::Update(float dt) {
@@ -215,3 +220,5 @@ void GameplayScene::Draw() {
         DrawText(pauseText.c_str(), SCREEN_X/2 - textWidth/2, SCREEN_Y/2 - fontSize/2, fontSize, RAYWHITE);
     }
 }
+
+} // namespace Ralph

@@ -4,14 +4,18 @@
 #include "Scene.h"
 #include "Game.h"
 
+namespace Ralph {
+
 class MenuScene : public Scene {
 public:
     MenuScene(Game* game);
     void Update(float dt) override;
     void Draw() override;
-
 private:
     Game* game;
 };
 
+} // namespace Ralph
+
 #endif
+

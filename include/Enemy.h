@@ -3,6 +3,8 @@
 
 #include "Common.h"
 
+namespace Ralph {
+
 class Enemy {
 public:
     Vector2 pos, speed;
@@ -15,5 +17,7 @@ public:
     void Draw(Texture2D tex, Vector2 shake);
     Rectangle GetRect();
 };
+
+} // namespace Ralph
 
 #endif

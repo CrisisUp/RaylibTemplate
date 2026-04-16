@@ -5,6 +5,8 @@
 #include <filesystem>
 #include <iostream>
 
+namespace Ralph {
+
 void Logger::Init() {
     auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
     console_sink->set_level(spdlog::level::trace);
@@ -29,3 +31,5 @@ void Logger::Init() {
 void Logger::Shutdown() {
     spdlog::shutdown();
 }
+
+} // namespace Ralph

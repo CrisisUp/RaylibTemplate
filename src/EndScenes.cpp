@@ -1,9 +1,10 @@
 #include "EndScenes.h"
 #include "InputManager.h"
 #include "ResourceManager.h"
-#include "InputManager.h"
 #include "LocalizationManager.h"
 #include "GameplayScene.h"
+
+namespace Ralph {
 
 LevelUpScene::LevelUpScene(Game* g) : game(g) {}
 void LevelUpScene::Update(float dt) {
@@ -35,3 +36,5 @@ void LostScene::Draw() {
     DrawText(LocalizationManager::Instance().Get("MSG_GAME_OVER").c_str(), SCREEN_X/2-100, SCREEN_Y/2-20, 30, RED);
     DrawText(LocalizationManager::Instance().Get("MSG_TRY_AGAIN").c_str(), SCREEN_X/2-180, SCREEN_Y/2+100, 20, RED);
 }
+
+} // namespace Ralph

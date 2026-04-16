@@ -4,6 +4,8 @@
 #include "Common.h"
 #include <vector>
 
+namespace Ralph {
+
 struct Particle {
     Vector2 pos, speed;
     Color color;
@@ -19,5 +21,7 @@ public:
     void Draw(Vector2 offset);
     void Clear();
 };
+
+} // namespace Ralph
 
 #endif

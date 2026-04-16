@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 
+namespace Ralph {
+
 struct FloatingText {
     Vector2 pos;
     std::string text;
@@ -21,5 +23,7 @@ public:
     void Draw(Vector2 offset);
     void Clear();
 };
+
+} // namespace Ralph
 
 #endif

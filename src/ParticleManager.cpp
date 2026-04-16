@@ -1,6 +1,8 @@
 #include "ParticleManager.h"
 #include <raymath.h>
 
+namespace Ralph {
+
 void ParticleManager::SpawnBurst(Vector2 position, Color color, int count) {
     for (int i = 0; i < count; i++) {
         particles.push_back({
@@ -36,3 +38,5 @@ void ParticleManager::Draw(Vector2 offset) {
 void ParticleManager::Clear() {
     particles.clear();
 }
+
+} // namespace Ralph

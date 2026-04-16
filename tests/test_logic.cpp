@@ -11,11 +11,11 @@ TEST(ConfigManagerTest, LoadDefaultValues) {
     testConfig << "volume=80\n";
     testConfig.close();
 
-    ConfigManager::Instance().Load("test_config.txt");
+    Ralph::ConfigManager::Instance().Load("test_config.txt");
     
-    EXPECT_EQ(ConfigManager::Instance().GetString("language", "en"), "pt");
-    EXPECT_EQ(ConfigManager::Instance().GetString("volume", "0"), "80");
-    EXPECT_EQ(ConfigManager::Instance().GetString("non_existent", "default"), "default");
+    EXPECT_EQ(Ralph::ConfigManager::Instance().GetString("language", "en"), "pt");
+    EXPECT_EQ(Ralph::ConfigManager::Instance().GetString("volume", "0"), "80");
+    EXPECT_EQ(Ralph::ConfigManager::Instance().GetString("non_existent", "default"), "default");
 
     std::remove("test_config.txt");
 }

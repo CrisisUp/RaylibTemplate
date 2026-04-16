@@ -1,5 +1,7 @@
 #include "FloatingTextManager.h"
 
+namespace Ralph {
+
 void FloatingTextManager::Spawn(Vector2 pos, std::string text, Color color) {
     texts.push_back({pos, text, color, 1.0f, 1.0f, true});
 }
@@ -26,3 +28,5 @@ void FloatingTextManager::Draw(Vector2 offset) {
 void FloatingTextManager::Clear() {
     texts.clear();
 }
+
+} // namespace Ralph

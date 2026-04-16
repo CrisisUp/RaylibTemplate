@@ -4,6 +4,8 @@
 #include <string>
 #include <map>
 
+namespace Ralph {
+
 class ConfigManager {
 public:
     static ConfigManager& Instance() {
@@ -27,6 +29,8 @@ private:
     std::map<std::string, std::string> settings;
     std::string Trim(const std::string& s);
 };
+
+} // namespace Ralph
 
 #endif
 

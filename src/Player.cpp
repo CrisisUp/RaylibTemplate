@@ -3,6 +3,8 @@
 #include <raymath.h>
 #include <cmath>
 
+namespace Ralph {
+
 Player::Player(Texture2D tex) : texture(tex) {
     startPos = {(float)SCREEN_X / 2, (float)SCREEN_Y / 2};
     godMode = false;
@@ -99,3 +101,5 @@ void Player::Draw(Vector2 shake) {
 Rectangle Player::GetRect() {
     return {pos.x - texture.width/2.0f, pos.y - texture.height/2.0f, (float)texture.width, (float)texture.height};
 }
+
+} // namespace Ralph

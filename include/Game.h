@@ -5,6 +5,8 @@
 #include "Scene.h"
 #include <memory>
 
+namespace Ralph {
+
 class Game {
 public:
     int score, hiScore, level, comboCount;
@@ -25,6 +27,9 @@ public:
     int LoadHighScore();
     void SaveHighScore(int s);
 
+    // Shader Effects
+    void TriggerDamageEffect() { aberrationAmount = 1.0f; }
+
 private:
     float fadeAlpha;
     bool isFading, fadeOut;
@@ -33,6 +38,13 @@ private:
     // Resolution Independence
     RenderTexture2D target;
     Rectangle screenRect;
+
+    // Shader Pipeline
+    Shader retroShader;
+    Shader bloomShader;
+    float aberrationAmount = 0.0f;
 };
+
+} // namespace Ralph
 
 #endif

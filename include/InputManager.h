@@ -4,6 +4,8 @@
 #include "Common.h"
 #include <map>
 
+namespace Ralph {
+
 enum GameAction {
     MOVE_UP,
     MOVE_DOWN,
@@ -39,5 +41,7 @@ private:
     InputManager() {}
     std::map<GameAction, int> bindings;
 };
+
+} // namespace Ralph
 
 #endif

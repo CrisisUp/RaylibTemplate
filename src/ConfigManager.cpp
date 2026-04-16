@@ -3,6 +3,8 @@
 #include <sstream>
 #include <iostream>
 
+namespace Ralph {
+
 void ConfigManager::Load(const std::string& fileName) {
     std::ifstream file(fileName);
     if (!file.is_open()) {
@@ -70,3 +72,5 @@ std::string ConfigManager::Trim(const std::string& s) {
     size_t last = s.find_last_not_of(" \t\r\n");
     return s.substr(first, (last - first + 1));
 }
+
+} // namespace Ralph

@@ -815,4 +815,5 @@ CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o: \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Enemy.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Boss.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/EventManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/OptionsScene.h

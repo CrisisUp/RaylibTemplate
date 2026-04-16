@@ -7,8 +7,11 @@
 #include "Profiling.h"
 #include "Logger.h"
 #include "Utils.h"
+#include "EventManager.h"
 #include <fstream>
 #include <raymath.h>
+
+namespace Ralph {
 
 Game::Game() {
     // Permite que a janela seja redimensionada e use anti-aliasing
@@ -16,7 +19,7 @@ Game::Game() {
     InitWindow(SCREEN_X, SCREEN_Y, WINDOW_TITLE);
     InitAudioDevice();
     
-    // Inicializa a textura de renderização (tela virtual interna)
+    // Inicializa a textura de renderização (pipeline de shaders)
     target = LoadRenderTexture(SCREEN_X, SCREEN_Y);
     SetTextureFilter(target.texture, TEXTURE_FILTER_BILINEAR);
     
@@ -25,6 +28,10 @@ Game::Game() {
     // Tenta carregar o pacote de assets primeiro
     ResourceManager::Instance().LoadPak("resources.pak");
     
+    // Carrega Shaders
+    bloomShader = ResourceManager::Instance().GetShader("", "resources/shaders/bloom.fs");
+    retroShader = ResourceManager::Instance().GetShader("", "resources/shaders/retro.fs");
+
     // Tenta carregar config do perfil do usuário, senao da pasta do jogo
     std::string configPath = Utils::GetSavePath("config.txt");
     if (std::filesystem::exists(configPath)) {
@@ -52,6 +59,11 @@ Game::Game() {
     fadeAlpha = 0;
     isFading = false;
     fadeOut = false;
+
+    // Subscreve para eventos globais
+    EventManager::Instance().Subscribe(EventType::PLAYER_DAMAGED, [this](const Event& e) {
+        this->TriggerDamageEffect();
+    });
     
     currentScene = std::make_unique<MenuScene>(this);
 }
@@ -75,6 +87,10 @@ void Game::Update() {
     float dt = GetFrameTime();
 
     UpdateMusicStream(music);
+
+    // Reduz o efeito de aberração gradualmente
+    if (aberrationAmount > 0) aberrationAmount -= dt * 2.0f;
+    if (aberrationAmount < 0) aberrationAmount = 0;
 
     // Calcula a escala da tela para o Letterboxing
     float scale = fminf((float)GetScreenWidth()/SCREEN_X, (float)GetScreenHeight()/SCREEN_Y);
@@ -111,15 +127,25 @@ void Game::Draw() {
         if (fadeAlpha > 0) DrawRectangle(0, 0, SCREEN_X, SCREEN_Y, Fade(BLACK, fadeAlpha));
     EndTextureMode();
 
-    // 2. Desenha a textura virtual na janela real, escalando e centralizando
+    // 2. Desenha na tela real aplicando os shaders em cadeia
     BeginDrawing();
-        ClearBackground(DARKGRAY); // Cor de fundo das barras (letterbox)
+        ClearBackground(BLACK); // Cor de fundo das barras (letterbox)
         
-        // Invertemos o Y (negativo na altura da origem) porque texturas no OpenGL são invertidas
-        Rectangle sourceRec = { 0.0f, 0.0f, (float)target.texture.width, (float)-target.texture.height };
-        
-        // Desenha com a escala calculada no Update
-        DrawTexturePro(target.texture, sourceRec, screenRect, { 0, 0 }, 0.0f, WHITE);
+        // Configura uniformes do Retro Shader
+        Vector2 res = {(float)SCREEN_X, (float)SCREEN_Y};
+        SetShaderValue(retroShader, GetShaderLocation(retroShader, "resolution"), &res, SHADER_UNIFORM_VEC2);
+        SetShaderValue(retroShader, GetShaderLocation(retroShader, "aberrationAmount"), &aberrationAmount, SHADER_UNIFORM_FLOAT);
+        float timeVal = (float)GetTime();
+        SetShaderValue(retroShader, GetShaderLocation(retroShader, "time"), &timeVal, SHADER_UNIFORM_FLOAT);
+
+        // Aplica os shaders
+        BeginShaderMode(bloomShader);
+            BeginShaderMode(retroShader);
+                // Invertemos o Y (negativo na altura da origem) porque texturas no OpenGL são invertidas
+                Rectangle sourceRec = { 0.0f, 0.0f, (float)target.texture.width, (float)-target.texture.height };
+                DrawTexturePro(target.texture, sourceRec, screenRect, { 0, 0 }, 0.0f, WHITE);
+            EndShaderMode();
+        EndShaderMode();
     EndDrawing();
 }
 
@@ -134,3 +160,5 @@ void Game::SaveHighScore(int s) {
     std::ofstream f(Utils::GetSavePath("highscore.txt"));
     if (f.is_open()) { f << s; f.close(); }
 }
+
+} // namespace Ralph

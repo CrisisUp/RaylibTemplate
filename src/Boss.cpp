@@ -1,6 +1,8 @@
 #include "Boss.h"
 #include <raymath.h>
 
+namespace Ralph {
+
 Boss::Boss() : active(false) {
     maxHp = 10;
     hp = maxHp;
@@ -28,3 +30,5 @@ void Boss::Draw(Texture2D tex, Vector2 shake) {
 Rectangle Boss::GetRect() {
     return {pos.x, pos.y, width, height};
 }
+
+} // namespace Ralph

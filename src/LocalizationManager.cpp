@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 
+namespace Ralph {
+
 void LocalizationManager::LoadLanguage(const std::string& langCode) {
     std::string fileName = "resources/lang/" + langCode + ".txt";
     std::ifstream file(fileName);
@@ -37,3 +39,5 @@ std::string LocalizationManager::Trim(const std::string& s) {
     size_t last = s.find_last_not_of(" \t\r\n");
     return s.substr(first, (last - first + 1));
 }
+
+} // namespace Ralph

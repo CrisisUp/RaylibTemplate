@@ -7,6 +7,8 @@
 #include "Utils.h"
 #include <raymath.h>
 
+namespace Ralph {
+
 OptionsScene::OptionsScene(Game* g) : game(g) {
     musicVol = ConfigManager::Instance().GetInt("musicVolume", 100);
     sfxVol = ConfigManager::Instance().GetInt("sfxVolume", 100);
@@ -76,3 +78,5 @@ void OptionsScene::Draw() {
 
     DrawText(LocalizationManager::Instance().Get("OPT_BACK").c_str(), centerX - 200, 550, 20, GRAY);
 }
+
+} // namespace Ralph

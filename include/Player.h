@@ -5,6 +5,8 @@
 #include "ParticleManager.h"
 #include <vector>
 
+namespace Ralph {
+
 class Player {
 public:
     Vector2 pos, startPos;
@@ -21,5 +23,7 @@ public:
     void Draw(Vector2 shake);
     Rectangle GetRect();
 };
+
+} // namespace Ralph
 
 #endif

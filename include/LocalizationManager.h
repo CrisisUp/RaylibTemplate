@@ -4,6 +4,8 @@
 #include <string>
 #include <map>
 
+namespace Ralph {
+
 class LocalizationManager {
 public:
     static LocalizationManager& Instance() {
@@ -19,5 +21,7 @@ private:
     std::map<std::string, std::string> strings;
     std::string Trim(const std::string& s);
 };
+
+} // namespace Ralph
 
 #endif

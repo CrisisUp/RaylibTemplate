@@ -3,10 +3,14 @@
 
 #include <string>
 
+namespace Ralph {
+
 class Utils {
 public:
     static std::string GetSavePath(const std::string& fileName);
     static std::string GetUserDataDirectory();
 };
+
+} // namespace Ralph
 
 #endif

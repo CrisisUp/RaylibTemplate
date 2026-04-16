@@ -4,6 +4,8 @@
 #include "Scene.h"
 #include "Game.h"
 
+namespace Ralph {
+
 class LevelUpScene : public Scene {
 public:
     LevelUpScene(Game* g);
@@ -21,5 +23,7 @@ public:
 private:
     Game* game;
 };
+
+} // namespace Ralph
 
 #endif

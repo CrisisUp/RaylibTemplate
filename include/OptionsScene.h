@@ -5,6 +5,8 @@
 #include "Game.h"
 #include <string>
 
+namespace Ralph {
+
 class OptionsScene : public Scene {
 public:
     OptionsScene(Game* g);
@@ -22,5 +24,7 @@ private:
 
     void SaveAndExit();
 };
+
+} // namespace Ralph
 
 #endif

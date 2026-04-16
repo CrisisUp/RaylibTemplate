@@ -1815,6 +1815,7 @@ CMakeFiles/unit_tests.dir/src/EndScenes.cpp.o: /Users/cristiano/Desktop/teste/Ra
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/EndScenes.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Enemy.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/EventManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Game.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/GameplayScene.h \
@@ -3646,6 +3647,7 @@ CMakeFiles/unit_tests.dir/src/Game.cpp.o: /Users/cristiano/Desktop/teste/RaylibT
   _deps/spdlog-src/include/spdlog/version.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/ConfigManager.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/EventManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Game.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/InputManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/LocalizationManager.h \
@@ -4465,6 +4467,7 @@ CMakeFiles/unit_tests.dir/src/GameplayScene.cpp.o: /Users/cristiano/Desktop/test
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/ConfigManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/EndScenes.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Enemy.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/EventManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Game.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/GameplayScene.h \
@@ -7805,6 +7808,7 @@ CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o: /Users/cristiano/Desktop/teste/Ra
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Boss.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Enemy.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/EventManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Game.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/GameplayScene.h \
@@ -12894,6 +12898,8 @@ _deps/spdlog-src/include/spdlog/common.h:
 /Users/cristiano/Desktop/teste/RaylibTemplate/include/GameplayScene.h:
 
 /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h:
+
+/Users/cristiano/Desktop/teste/RaylibTemplate/include/EventManager.h:
 
 /Users/cristiano/Desktop/teste/RaylibTemplate/src/EndScenes.cpp:
 

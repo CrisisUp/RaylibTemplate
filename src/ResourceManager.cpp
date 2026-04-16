@@ -3,6 +3,8 @@
 #include <cstring>
 #include <iostream>
 
+namespace Ralph {
+
 void ResourceManager::LoadPak(const std::string& pakPath) {
     FILE* f = fopen(pakPath.c_str(), "rb");
     if (!f) return;
@@ -41,8 +43,9 @@ unsigned char* ResourceManager::LoadFromPak(const std::string& fileName, int* si
     if (!f) return nullptr;
 
     fseek(f, entry.offset, SEEK_SET);
-    unsigned char* data = (unsigned char*)malloc(entry.size);
+    unsigned char* data = (unsigned char*)malloc(entry.size + 1); // +1 para null terminator se for texto
     fread(data, 1, entry.size, f);
+    data[entry.size] = '\0'; // Garante null terminator para shaders/textos
     fclose(f);
 
     *size = (int)entry.size;
@@ -102,9 +105,6 @@ Music ResourceManager::GetMusic(const std::string& fileName) {
         int size;
         unsigned char* data = LoadFromPak(fileName, &size);
         if (data) {
-            // Nota: Para Music Stream, raylib precisa que o arquivo esteja no disco para streaming.
-            // Para simplificar no prototipo, carregamos do disco se falhar do pak.
-            // Em versoes profissionais, usariamos LoadMusicStreamFromMemory se suportado (requer raylib 5.0+).
             const char* ext = strrchr(fileName.c_str(), '.');
             musicStreams[fileName] = LoadMusicStreamFromMemory(ext, data, size);
             free(data);
@@ -122,8 +122,37 @@ void ResourceManager::UnloadMusic() {
     musicStreams.clear();
 }
 
+Shader ResourceManager::GetShader(const std::string& vsFile, const std::string& fsFile) {
+    std::string key = vsFile + fsFile;
+    if (shaders.find(key) == shaders.end()) {
+        int vSize = 0, fSize = 0;
+        unsigned char* vData = vsFile.empty() ? nullptr : LoadFromPak(vsFile, &vSize);
+        unsigned char* fData = fsFile.empty() ? nullptr : LoadFromPak(fsFile, &fSize);
+
+        if (vData || fData) {
+            shaders[key] = LoadShaderFromMemory((char*)vData, (char*)fData);
+            if (vData) free(vData);
+            if (fData) free(fData);
+        } else {
+            shaders[key] = LoadShader(vsFile.empty() ? nullptr : vsFile.c_str(), 
+                                      fsFile.empty() ? nullptr : fsFile.c_str());
+        }
+    }
+    return shaders[key];
+}
+
+void ResourceManager::UnloadShaders() {
+    for (auto& pair : shaders) {
+        UnloadShader(pair.second);
+    }
+    shaders.clear();
+}
+
 void ResourceManager::UnloadAll() {
     UnloadTextures();
     UnloadSounds();
     UnloadMusic();
+    UnloadShaders();
 }
+
+} // namespace Ralph

@@ -814,4 +814,5 @@ CMakeFiles/unit_tests.dir/src/EndScenes.cpp.o: \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/ParticleManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Enemy.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Boss.h \
-  /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/EventManager.h

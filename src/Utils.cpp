@@ -10,6 +10,8 @@
 #include <pwd.h>
 #endif
 
+namespace Ralph {
+
 namespace fs = std::filesystem;
 
 std::string Utils::GetUserDataDirectory() {
@@ -42,3 +44,5 @@ std::string Utils::GetSavePath(const std::string& fileName) {
     if (dir.empty()) return fileName;
     return dir + "/" + fileName;
 }
+
+} // namespace Ralph

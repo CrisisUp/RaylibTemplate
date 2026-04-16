@@ -862,6 +862,7 @@ CMakeFiles/unit_tests.dir/src/Game.cpp.o: \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/log_msg.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/version.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Utils.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/EventManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \

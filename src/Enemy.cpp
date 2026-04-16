@@ -2,6 +2,8 @@
 #include <raymath.h>
 #include <cmath>
 
+namespace Ralph {
+
 Enemy::Enemy(Vector2 p, Vector2 s, float w, float h, EnemyType t) 
     : pos(p), speed(s), width(w), height(h), active(true), type(t) {}
 
@@ -34,3 +36,5 @@ void Enemy::Draw(Texture2D tex, Vector2 shake) {
 Rectangle Enemy::GetRect() {
     return {pos.x, pos.y, width, height};
 }
+
+} // namespace Ralph

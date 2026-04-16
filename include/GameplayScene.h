@@ -8,7 +8,10 @@
 #include "Boss.h"
 #include "ParticleManager.h"
 #include "FloatingTextManager.h"
+#include "EventManager.h"
 #include <vector>
+
+namespace Ralph {
 
 class GameplayScene : public Scene {
 public:
@@ -36,5 +39,7 @@ private:
     void ResetLevel();
     void TriggerImpact(float duration, float intensity, float flash);
 };
+
+} // namespace Ralph
 
 #endif

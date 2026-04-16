@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+namespace Ralph {
+
 struct ResourceEntry {
     unsigned int offset;
     unsigned int size;
@@ -33,6 +35,10 @@ public:
     Music GetMusic(const std::string& fileName);
     void UnloadMusic();
 
+    // Shader management
+    Shader GetShader(const std::string& vsFile, const std::string& fsFile);
+    void UnloadShaders();
+
     // Cleanup everything
     void UnloadAll();
 
@@ -43,6 +49,7 @@ private:
     std::map<std::string, Texture2D> textures;
     std::map<std::string, Sound> sounds;
     std::map<std::string, Music> musicStreams;
+    std::map<std::string, Shader> shaders;
 
     // Pak file related
     std::string currentPakPath;
@@ -51,5 +58,7 @@ private:
 
     unsigned char* LoadFromPak(const std::string& fileName, int* size);
 };
+
+} // namespace Ralph
 
 #endif

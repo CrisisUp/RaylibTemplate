@@ -1,5 +1,7 @@
 #include "InputManager.h"
 
+namespace Ralph {
+
 void InputManager::Init() {
     // Set default keys
     bindings[MOVE_UP]      = KEY_UP;
@@ -30,3 +32,5 @@ bool InputManager::IsActionPressed(GameAction action) {
 void InputManager::Rebind(GameAction action, int newKey) {
     bindings[action] = newKey;
 }
+
+} // namespace Ralph

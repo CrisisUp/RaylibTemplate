@@ -16,13 +16,13 @@ void SignalHandler(int signal) {
     }
     
     LOG_CRITICAL("CRASH DETECTADO! Sinal: {}", signalName);
-    Logger::Shutdown(); // Garante que o log seja escrito no disco
+    Ralph::Logger::Shutdown(); // Garante que o log seja escrito no disco
     std::exit(signal);
 }
 
 int main() {
     // Inicializa o sistema de logs
-    Logger::Init();
+    Ralph::Logger::Init();
     LOG_INFO("Iniciando Ralph Arcade v1.0.0");
 
     // Configura os handlers de sinal para capturar crashes
@@ -32,7 +32,7 @@ int main() {
     std::signal(SIGILL,  SignalHandler);
 
     try {
-        Game game;
+        Ralph::Game game;
         LOG_INFO("Motor do jogo inicializado corretamente.");
         
         PlayMusicStream(game.music);
@@ -49,6 +49,6 @@ int main() {
     }
 
     LOG_INFO("Finalizando jogo normalmente.");
-    Logger::Shutdown();
+    Ralph::Logger::Shutdown();
     return 0;
 }

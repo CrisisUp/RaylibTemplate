@@ -7,8 +7,10 @@
 #define SCREEN_Y 700
 #define WINDOW_TITLE "Ralph Arcade - FINAL REVISED"
 
-enum GameState { MENU, PLAYING, LEVEL_UP, LOST };
-enum EnemyType { BOUNCER, HUNTER };
-enum PowerUpType { SPEED, INVINCIBLE, SLOW, NONE };
+namespace Ralph {
+    enum GameState { MENU, PLAYING, LEVEL_UP, LOST };
+    enum EnemyType { BOUNCER, HUNTER };
+    enum PowerUpType { SPEED, INVINCIBLE, SLOW, NONE };
+}
 
 #endif

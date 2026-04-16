@@ -5,6 +5,8 @@
 #include "GameplayScene.h"
 #include "OptionsScene.h"
 
+namespace Ralph {
+
 MenuScene::MenuScene(Game* g) : game(g) {
 }
 
@@ -25,3 +27,5 @@ void MenuScene::Draw() {
     DrawText(LocalizationManager::Instance().Get("MENU_OPTIONS").c_str(), SCREEN_X/2 - 110, SCREEN_Y/2 + 120, 20, GRAY);
     DrawText(TextFormat("%s: %d", LocalizationManager::Instance().Get("MENU_BEST_SCORE").c_str(), game->hiScore), SCREEN_X/2 - 80, SCREEN_Y/2 + 170, 20, YELLOW);
 }
+
+} // namespace Ralph
