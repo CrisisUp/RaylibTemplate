@@ -1,0 +1,23 @@
+{
+  "name": "ralph-arcade",
+  "version": "1.0.0",
+  "description": "Ralph Arcade: Legendary Repaired Edition",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  },
+  "standard-version": {
+    "types": [
+      {"type": "feat", "section": "Features"},
+      {"type": "fix", "section": "Bug Fixes"},
+      {"type": "chore", "hidden": true},
+      {"type": "docs", "section": "Documentation"},
+      {"type": "style", "hidden": true},
+      {"type": "refactor", "section": "Refactoring"},
+      {"type": "perf", "section": "Performance"},
+      {"type": "test", "hidden": true}
+    ]
+  }
+}

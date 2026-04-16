@@ -1,0 +1,12 @@
+.git
+build
+build-web
+.vscode
+.devcontainer
+docs
+.DS_Store
+*.zip
+*.dmg
+*.exe
+*.deb
+*.tar.gz

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Dev Team"
+  given-names: "Ralph"
+title: "Ralph Arcade: Legendary Repaired Edition"
+version: 1.0.0
+date-released: 2026-04-16
+url: "https://github.com/your-username/RaylibTemplate"
+abstract: "A high-performance arcade game template built with Raylib, featuring modern C++ engineering standards."
+keywords:
+  - "raylib"
+  - "game-development"
+  - "cpp"
+  - "arcade"
+  - "template"
+license: MIT

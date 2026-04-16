@@ -1,0 +1,28 @@
+{
+    "name": "Raylib C++ Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools-extension-pack",
+                "twinkasten.cmake-format"
+            ],
+            "settings": {
+                "cmake.configureOnOpen": true,
+                "editor.formatOnSave": true
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:1": {
+            "installZsh": true,
+            "configureZshAsDefaultShell": true,
+            "upgradePackages": true
+        }
+    }
+}

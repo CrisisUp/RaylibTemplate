@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.14) # Minimum for FetchContent
 project(RalphArcade VERSION 1.0.0 LANGUAGES CXX)
 
+if(POLICY CMP0135)
+  cmake_policy(SET CMP0135 NEW)
+endif()
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -51,6 +55,16 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(spdlog)
 
+# --- Fetch backward-cpp ---
+if(NOT EMSCRIPTEN)
+    FetchContent_Declare(
+        backward
+        GIT_REPOSITORY https://github.com/bombela/backward-cpp.git
+        GIT_TAG        master
+    )
+    FetchContent_MakeAvailable(backward)
+endif()
+
 # --- Fetch Raylib ---
 set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 FetchContent_Declare(
@@ -81,6 +95,21 @@ if(NOT EMSCRIPTEN)
 endif()
 
 # --- Static Analysis & Formatting ---
+find_program(CPPCHECK_EXE NAMES "cppcheck")
+if(CPPCHECK_EXE AND NOT EMSCRIPTEN)
+    add_custom_target(cppcheck
+        COMMAND ${CPPCHECK_EXE} 
+        --enable=warning,performance,portability,style 
+        --inconclusive 
+        --force 
+        --inline-suppr
+        --suppress=missingIncludeSystem
+        -I ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+        COMMENT "Rodando análise estática profunda com Cppcheck..."
+    )
+endif()
+
 find_program(CLANG_TIDY_EXE NAMES "clang-tidy")
 if(CLANG_TIDY_EXE AND NOT EMSCRIPTEN)
     set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE}")
@@ -113,7 +142,9 @@ if(Python3_FOUND)
     # Target de validação
     add_custom_target(validate-assets
         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/validate_assets.py
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/validate_translations.py
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMENT "Validando assets e arquivos de tradução..."
     )
 
     # Comando para empacotar assets
@@ -126,36 +157,55 @@ if(Python3_FOUND)
     add_custom_target(pack-assets ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/resources.pak)
 endif()
 
-# --- Include Directories ---
-include_directories(include)
+# --- Core Library (RalphArcadeCore) ---
+file(GLOB_RECURSE CORE_SOURCES "src/*.cpp")
+list(FILTER CORE_SOURCES EXCLUDE REGEX "src/main.cpp")
+add_library(RalphArcadeCore STATIC ${CORE_SOURCES})
+target_include_directories(RalphArcadeCore PUBLIC include)
+target_link_libraries(RalphArcadeCore PUBLIC raylib spdlog::spdlog)
 
-# --- Source Files ---
-file(GLOB_RECURSE SOURCES "src/*.cpp")
-list(FILTER SOURCES EXCLUDE REGEX "src/main.cpp")
+if(NOT EMSCRIPTEN)
+    target_link_libraries(RalphArcadeCore PUBLIC backward)
+    target_compile_definitions(RalphArcadeCore PUBLIC BACKWARD_HAS_DW=1)
+endif()
 
-# --- Executable ---
+if(TRACY_ENABLE AND NOT EMSCRIPTEN)
+    target_link_libraries(RalphArcadeCore PUBLIC TracyClient)
+    target_compile_definitions(RalphArcadeCore PUBLIC TRACY_ENABLE)
+endif()
+
+# --- Main Executable ---
 if(APPLE AND NOT EMSCRIPTEN)
-    add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES} src/main.cpp)
+    # Suporte a ícone nativo no Mac (.icns)
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/resources/ui/icon.icns")
+        set(MACOSX_ICON "${CMAKE_CURRENT_SOURCE_DIR}/resources/ui/icon.icns")
+        set_source_files_properties(${MACOSX_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+        add_executable(${PROJECT_NAME} MACOSX_BUNDLE src/main.cpp ${MACOSX_ICON})
+    else()
+        add_executable(${PROJECT_NAME} MACOSX_BUNDLE src/main.cpp)
+    endif()
+
     set_target_properties(${PROJECT_NAME} PROPERTIES
         MACOSX_BUNDLE_GUI_IDENTIFIER ${PROJECT_BUNDLE_ID}
         MACOSX_BUNDLE_BUNDLE_NAME ${PROJECT_NAME}
         MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION}
         MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
         MACOSX_BUNDLE_COPYRIGHT "Copyright (c) 2026 ${PROJECT_AUTHOR}"
+        MACOSX_BUNDLE_ICON_FILE "icon.icns"
     )
+elseif(WIN32)
+    # Suporte a ícone nativo no Windows (.rc/.ico)
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/resources/ui/icon.rc")
+        add_executable(${PROJECT_NAME} WIN32 src/main.cpp "${CMAKE_CURRENT_SOURCE_DIR}/resources/ui/icon.rc")
+    else()
+        add_executable(${PROJECT_NAME} WIN32 src/main.cpp)
+    endif()
 else()
-    add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
+    add_executable(${PROJECT_NAME} src/main.cpp)
 endif()
 
-# Garante que o pack-assets rode antes do executável
+target_link_libraries(${PROJECT_NAME} PRIVATE RalphArcadeCore)
 add_dependencies(${PROJECT_NAME} pack-assets)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE raylib spdlog::spdlog)
-
-if(TRACY_ENABLE AND NOT EMSCRIPTEN)
-    target_link_libraries(${PROJECT_NAME} PRIVATE TracyClient)
-    target_compile_definitions(${PROJECT_NAME} PRIVATE TRACY_ENABLE)
-endif()
 
 if(APPLE AND NOT EMSCRIPTEN)
     target_link_libraries(${PROJECT_NAME} PRIVATE "-framework IOKit" "-framework Cocoa" "-framework OpenGL")
@@ -165,13 +215,36 @@ endif()
 if(NOT EMSCRIPTEN)
     file(GLOB_RECURSE TEST_SOURCES "tests/*.cpp")
     if(TEST_SOURCES)
-        add_executable(unit_tests ${TEST_SOURCES} ${SOURCES})
-        target_link_libraries(unit_tests PRIVATE GTest::gtest_main raylib spdlog::spdlog)
+        add_executable(unit_tests ${TEST_SOURCES})
+        target_link_libraries(unit_tests PRIVATE RalphArcadeCore GTest::gtest_main)
         if(APPLE)
             target_link_libraries(unit_tests PRIVATE "-framework IOKit" "-framework Cocoa" "-framework OpenGL")
         endif()
         add_test(NAME AllTests COMMAND unit_tests)
     endif()
+endif()
+
+# --- Visual Regression Tests ---
+if(NOT EMSCRIPTEN AND Python3_FOUND)
+    add_test(NAME VisualRegression
+        COMMAND ${CMAKE_COMMAND} -E chdir ${CMAKE_CURRENT_BINARY_DIR} 
+        ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_SOURCE_DIR}/scripts/run_visual_test.cmake
+    )
+endif()
+
+# --- Performance Benchmark Test ---
+if(NOT EMSCRIPTEN AND Python3_FOUND)
+    set(BENCH_EXE "./RalphArcade")
+    if(APPLE)
+        set(BENCH_EXE "./RalphArcade.app/Contents/MacOS/RalphArcade")
+    elseif(WIN32)
+        set(BENCH_EXE "./RalphArcade.exe")
+    endif()
+
+    add_test(NAME PerformanceBenchmark
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/verify_performance.py ${BENCH_EXE} 55.0 300
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    )
 endif()
 
 # --- Resource Handling ---
@@ -185,38 +258,45 @@ endif()
 
 # --- Installation & CPack ---
 if(NOT EMSCRIPTEN)
+    install(TARGETS ${PROJECT_NAME} RalphArcadeCore
+        BUNDLE DESTINATION .
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
+    )
+    
     if(APPLE)
-        # Install as a .app Bundle
-        install(TARGETS ${PROJECT_NAME} BUNDLE DESTINATION .)
-        # No macOS Bundle, resources.pak vai para Contents/Resources
         install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources.pak DESTINATION ${PROJECT_NAME}.app/Contents/Resources)
         install(FILES config.txt DESTINATION ${PROJECT_NAME}.app/Contents/Resources)
     else()
-        # Install as a normal executable
-        install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
-        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources.pak DESTINATION share/${PROJECT_NAME})
-        install(FILES config.txt DESTINATION share/${PROJECT_NAME})
+        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources.pak DESTINATION .)
+        install(FILES config.txt DESTINATION .)
     endif()
     
     set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
     set(CPACK_PACKAGE_VENDOR "${PROJECT_AUTHOR}")
     set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
     set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
-    set(CPACK_PACKAGE_CONTACT "ralph-support@example.com")
     set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
     set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 
     if(APPLE)
         set(CPACK_GENERATOR "DragNDrop")
+        set(CPACK_DMG_VOLUME_NAME "${PROJECT_NAME}")
+        set(CPACK_DMG_FORMAT "UDZO")
     elseif(WIN32)
         set(CPACK_GENERATOR "NSIS;ZIP")
+        set(CPACK_NSIS_DISPLAY_NAME "${PROJECT_NAME}")
+        set(CPACK_NSIS_PACKAGE_NAME "${PROJECT_NAME}")
         set(CPACK_NSIS_MODIFY_PATH ON)
-        set(CPACK_NSIS_DISPLAY_NAME "Ralph Arcade Installer")
-        set(CPACK_NSIS_PACKAGE_NAME "RalphArcade")
+        set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
+        if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/resources/ui/icon.ico")
+            set(CPACK_NSIS_MUI_ICON "${CMAKE_CURRENT_SOURCE_DIR}/resources/ui/icon.ico")
+            set(CPACK_NSIS_MUI_UNIICON "${CMAKE_CURRENT_SOURCE_DIR}/resources/ui/icon.ico")
+        endif()
     else()
         set(CPACK_GENERATOR "DEB;TGZ")
         set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${PROJECT_AUTHOR}")
-        set(CPACK_DEBIAN_PACKAGE_SECTION "games")
     endif()
     
     include(CPack)

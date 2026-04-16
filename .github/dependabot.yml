@@ -1,0 +1,13 @@
+# To get started with Dependabot version updates, please read the documentation:
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions-group:
+        patterns:
+          - "*"

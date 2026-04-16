@@ -1,5 +1,10 @@
 # Ralph Arcade - Legendary Repaired Edition
 
+![CI Pipeline](https://github.com/your-username/RaylibTemplate/actions/workflows/pipeline.yml/badge.svg)
+![License](https://img.shields.io/github/license/your-username/RaylibTemplate)
+![Latest Release](https://img.shields.io/github/v/release/your-username/RaylibTemplate)
+![Platform Support](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS%20%7C%20Web-blue)
+
 Bem-vindo ao **Ralph Arcade**, um jogo de ação frenética em estilo retro construído com a biblioteca Raylib. Você controla o Ralph e deve sobreviver em mundos gerados proceduralmente enquanto busca a pontuação máxima!
 
 ## 🕹️ Como Jogar

@@ -1,0 +1,25 @@
+# Enforce LF line endings for all text files
+* text=auto eol=lf
+
+# Explicitly mark files as text
+*.cpp text
+*.h text
+*.c text
+*.md text
+*.txt text
+*.cmake text
+*.json text
+*.yml text
+*.fs text
+
+# Mark game assets and executables as binary
+*.png binary
+*.wav binary
+*.ogg binary
+*.pak binary
+*.ico binary
+*.exe binary
+*.dmg binary
+
+# Ensure Makefile always uses tabs (required for make)
+Makefile binary
