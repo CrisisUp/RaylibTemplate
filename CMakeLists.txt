@@ -15,6 +15,18 @@ set(PROJECT_BUNDLE_ID "com.ralph.arcade")
 # --- Options ---
 option(TRACY_ENABLE "Enable Tracy profiler" ON)
 option(USE_SANITIZERS "Enable ASan and UBSan (Debug only)" ON)
+option(ENABLE_COVERAGE "Enable Code Coverage (Gcc/Clang only)" OFF)
+
+# --- Code Coverage ---
+if(ENABLE_COVERAGE)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage -fprofile-arcs -ftest-coverage")
+        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage")
+        message(STATUS "Code Coverage habilitado")
+    else()
+        message(WARNING "Coverage não suportado para este compilador.")
+    endif()
+endif()
 
 # --- Sanitizers Configuration ---
 if(USE_SANITIZERS AND NOT MSVC AND NOT EMSCRIPTEN)
@@ -78,6 +90,21 @@ find_program(CLANG_FORMAT_EXE NAMES "clang-format")
 if(CLANG_FORMAT_EXE)
     file(GLOB_RECURSE ALL_CXX_SOURCE_FILES src/*.cpp include/*.h tests/*.cpp)
     add_custom_target(format COMMAND ${CLANG_FORMAT_EXE} -i -style=file ${ALL_CXX_SOURCE_FILES})
+endif()
+
+# --- Documentation (Doxygen) ---
+find_package(Doxygen)
+if (DOXYGEN_FOUND)
+    set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in)
+    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+
+    configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
+
+    add_custom_target(docs
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Gerando documentação com Doxygen..."
+        VERBATIM)
 endif()
 
 # --- Asset Validation & Packing ---

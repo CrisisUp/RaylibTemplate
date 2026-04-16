@@ -3,6 +3,8 @@
 
 #include "Common.h"
 #include <map>
+#include <vector>
+#include <string>
 
 namespace Ralph {
 
@@ -16,6 +18,11 @@ enum GameAction {
     ACTION_CONFIRM,
     ACTION_PAUSE,
     ACTION_OPTIONS
+};
+
+struct Binding {
+    int key;
+    int gamepadButton;
 };
 
 class InputManager {
@@ -36,6 +43,12 @@ public:
 
     // Rebind an action to a new key
     void Rebind(GameAction action, int newKey);
+
+    // Get the name of a key as a string
+    std::string GetActionKeyName(GameAction action);
+
+    // Get the first key pressed this frame (for rebinding)
+    int GetAnyKeyPressed();
 
 private:
     InputManager() {}

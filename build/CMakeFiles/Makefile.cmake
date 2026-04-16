@@ -77,6 +77,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake"
   "/opt/homebrew/share/cmake/Modules/FetchContent.cmake"
   "/opt/homebrew/share/cmake/Modules/FetchContent/CMakeLists.cmake.in"
+  "/opt/homebrew/share/cmake/Modules/FindDoxygen.cmake"
   "/opt/homebrew/share/cmake/Modules/FindGit.cmake"
   "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
   "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"

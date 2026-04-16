@@ -6,7 +6,7 @@ CXX_DEFINES = -DTRACY_ENABLE
 
 CXX_INCLUDES = -isystem /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-src/public
 
-CXX_FLAGSarm64 =  -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=gnu++17 -arch arm64
+CXX_FLAGSarm64 =  --coverage -fprofile-arcs -ftest-coverage -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=gnu++17 -arch arm64
 
-CXX_FLAGS =  -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=gnu++17 -arch arm64
+CXX_FLAGS =  --coverage -fprofile-arcs -ftest-coverage -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=gnu++17 -arch arm64
 

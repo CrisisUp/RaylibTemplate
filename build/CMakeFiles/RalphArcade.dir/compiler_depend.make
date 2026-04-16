@@ -5497,6 +5497,7 @@ CMakeFiles/RalphArcade.dir/src/InputManager.cpp.o: /Users/cristiano/Desktop/test
   /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/raylib-src/src/raylib.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/ConfigManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/InputManager.h
 
 CMakeFiles/RalphArcade.dir/src/LocalizationManager.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/LocalizationManager.cpp \

@@ -22,6 +22,9 @@ private:
     bool fullscreen;
     std::string lang;
 
+    bool rebindingMode = false;
+    int selectedRebind = 0;
+
     void SaveAndExit();
 };
 

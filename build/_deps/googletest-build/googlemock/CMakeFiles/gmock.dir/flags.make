@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googlemock/include -I/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googlemock -isystem /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googletest/include -isystem /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googletest
 
-CXX_FLAGSarm64 =  -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=c++17 -arch arm64  -DGTEST_HAS_PTHREAD=1  
+CXX_FLAGSarm64 =  --coverage -fprofile-arcs -ftest-coverage -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=c++17 -arch arm64  -DGTEST_HAS_PTHREAD=1  
 
-CXX_FLAGS =  -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=c++17 -arch arm64  -DGTEST_HAS_PTHREAD=1  
+CXX_FLAGS =  --coverage -fprofile-arcs -ftest-coverage -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=c++17 -arch arm64  -DGTEST_HAS_PTHREAD=1  
 

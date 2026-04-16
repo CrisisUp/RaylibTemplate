@@ -6,15 +6,44 @@ Bem-vindo ao **Ralph Arcade**, um jogo de ação frenética em estilo retro cons
 
 O objetivo é simples: **colete todas as moedas amarelas** para avançar de nível. Mas cuidado, os inimigos e o cenário ficarão mais perigosos a cada passo!
 
-### Controles
+### Controles (Totalmente Configuráveis!)
 
-* **Setas do Teclado:** Movimentam o Ralph.
-* **Barra de Espaço:** Ativa o **DASH** (Impulso rápido). Possui um tempo de recarga de 0.6s.
+* **Setas do Teclado:** Movimentam o Ralph (Padrão).
+* **Barra de Espaço:** Ativa o **DASH** (Impulso rápido).
 * **Enter:** Inicia o jogo ou avança entre telas (Menu, Level Up, Game Over).
+* **O:** Abre o menu de **Opções** para ajustar volumes, idioma e **RECONFIGURAR TECLAS**.
+* **Gamepad:** Suporte nativo a controles (Xbox/Playstation/Generic).
+
+---
+
+## 🛠️ Funcionalidades de Engenharia (Elite)
+
+Este projeto foi atualizado com padrões de excelência técnica:
+
+### 1. Acessibilidade (Input Rebinding)
+
+* Sistema de entrada flexível com suporte a múltiplas associações.
+* Interface visual no menu de Opções para remapear teclas em tempo real.
+* Detecção automática de Gamepad com mapeamento dinâmico.
+
+### 2. Documentação Técnica Automática (Doxygen)
+
+* Gere a documentação completa do código fonte (classes, métodos, arquitetura).
+* Requer **Doxygen** instalado no sistema.
+* Comando: `cd build && make docs` (gera em `build/docs/html`).
+
+### 3. Métricas de Qualidade (Code Coverage)
+
+* Suporte a relatórios de cobertura de testes (GCC/Clang).
+* Habilite via CMake: `cmake .. -DENABLE_COVERAGE=ON`.
+* Execute os testes: `make unit_tests && ./unit_tests`.
+* Gere o relatório (ex: `lcov`): `lcov --capture --directory . --output-file coverage.info`.
 
 ---
 
 ## 🚀 Mecânicas Principais
+
+... (resto do arquivo)
 
 ### 1. Sistema de Níveis e Biomas
 
@@ -74,8 +103,8 @@ brew install cmake raylib
 
 ### 🪟 Windows
 
-- Recomendamos o **Visual Studio 2022** (com C++ Desktop Development) ou **MinGW-w64**.
-- O CMake baixará e compilará a Raylib automaticamente durante a primeira build.
+* Recomendamos o **Visual Studio 2022** (com C++ Desktop Development) ou **MinGW-w64**.
+* O CMake baixará e compilará a Raylib automaticamente durante a primeira build.
 
 ---
 
