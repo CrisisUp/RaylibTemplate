@@ -1,0 +1,22 @@
+# Build artifacts
+obj/
+jogo
+jogo.exe
+
+# VS artifacts
+.vs/
+Debug/
+x64/
+*.sln
+*.vcxproj
+*.user
+*.filters
+*.pdb
+*.ilk
+*.obj
+
+# OS artifacts
+.DS_Store
+
+# Save files
+highscore.txt

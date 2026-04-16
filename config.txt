@@ -1,0 +1,24 @@
+# Ralph Arcade - Game Balance Configuration
+
+# Localization
+language=pt
+
+# Player Settings
+playerBaseSpeed=300.0
+invulnDuration=1.5
+dashDuration=0.15
+dashCooldown=0.6
+dashSpeedMult=4.5
+
+# Enemy Settings
+enemyBouncerSpeed=150.0
+enemyHunterSpeed=80.0
+levelSpeedIncrement=0.02
+
+# Boss Settings
+bossMaxHp=10
+bossSpeed=120.0
+
+# Visual Settings
+shakeIntensityBase=10.0
+shakeDurationBase=0.3

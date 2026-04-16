@@ -1,0 +1,7 @@
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/RalphArcade.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/edit_cache.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/rebuild_cache.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/list_install_components.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/install.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/install/local.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/install/strip.dir
