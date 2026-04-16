@@ -354,6 +354,7 @@ unit_tests: CMakeFiles/unit_tests.dir/build.make
 unit_tests: lib/libgtest_main.a
 unit_tests: _deps/raylib-build/raylib/libraylib.a
 unit_tests: _deps/spdlog-build/libspdlogd.a
+unit_tests: _deps/backward-build/libbackward.a
 unit_tests: lib/libgtest.a
 unit_tests: _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
 unit_tests: CMakeFiles/unit_tests.dir/link.txt

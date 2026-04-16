@@ -67,6 +67,7 @@ all: CMakeFiles/pack-assets.dir/all
 all: CMakeFiles/RalphArcade.dir/all
 all: CMakeFiles/unit_tests.dir/all
 all: _deps/spdlog-build/all
+all: _deps/backward-build/all
 all: _deps/raylib-build/all
 all: _deps/tracy-build/all
 all: _deps/googletest-build/all
@@ -77,6 +78,7 @@ codegen: CMakeFiles/pack-assets.dir/codegen
 codegen: CMakeFiles/RalphArcade.dir/codegen
 codegen: CMakeFiles/unit_tests.dir/codegen
 codegen: _deps/spdlog-build/codegen
+codegen: _deps/backward-build/codegen
 codegen: _deps/raylib-build/codegen
 codegen: _deps/tracy-build/codegen
 codegen: _deps/googletest-build/codegen
@@ -84,6 +86,7 @@ codegen: _deps/googletest-build/codegen
 
 # The main recursive "preinstall" target.
 preinstall: _deps/spdlog-build/preinstall
+preinstall: _deps/backward-build/preinstall
 preinstall: _deps/raylib-build/preinstall
 preinstall: _deps/tracy-build/preinstall
 preinstall: _deps/googletest-build/preinstall
@@ -95,10 +98,33 @@ clean: CMakeFiles/pack-assets.dir/clean
 clean: CMakeFiles/RalphArcade.dir/clean
 clean: CMakeFiles/unit_tests.dir/clean
 clean: _deps/spdlog-build/clean
+clean: _deps/backward-build/clean
 clean: _deps/raylib-build/clean
 clean: _deps/tracy-build/clean
 clean: _deps/googletest-build/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory _deps/backward-build
+
+# Recursive "all" directory target.
+_deps/backward-build/all: _deps/backward-build/CMakeFiles/backward_object.dir/all
+_deps/backward-build/all: _deps/backward-build/CMakeFiles/backward.dir/all
+.PHONY : _deps/backward-build/all
+
+# Recursive "codegen" directory target.
+_deps/backward-build/codegen: _deps/backward-build/CMakeFiles/backward_object.dir/codegen
+_deps/backward-build/codegen: _deps/backward-build/CMakeFiles/backward.dir/codegen
+.PHONY : _deps/backward-build/codegen
+
+# Recursive "preinstall" directory target.
+_deps/backward-build/preinstall:
+.PHONY : _deps/backward-build/preinstall
+
+# Recursive "clean" directory target.
+_deps/backward-build/clean: _deps/backward-build/CMakeFiles/backward_object.dir/clean
+_deps/backward-build/clean: _deps/backward-build/CMakeFiles/backward.dir/clean
+.PHONY : _deps/backward-build/clean
 
 #=============================================================================
 # Directory level rules for directory _deps/googletest-build
@@ -324,7 +350,7 @@ CMakeFiles/validate-assets.dir/clean:
 CMakeFiles/pack-assets.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pack-assets.dir/build.make CMakeFiles/pack-assets.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pack-assets.dir/build.make CMakeFiles/pack-assets.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=51 "Built target pack-assets"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=54 "Built target pack-assets"
 .PHONY : CMakeFiles/pack-assets.dir/all
 
 # Build rule for subdir invocation for target.
@@ -341,7 +367,7 @@ pack-assets: CMakeFiles/pack-assets.dir/rule
 # codegen rule for target.
 CMakeFiles/pack-assets.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pack-assets.dir/build.make CMakeFiles/pack-assets.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=51 "Finished codegen for target pack-assets"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=54 "Finished codegen for target pack-assets"
 .PHONY : CMakeFiles/pack-assets.dir/codegen
 
 # clean rule for target.
@@ -355,6 +381,7 @@ CMakeFiles/pack-assets.dir/clean:
 # All Build rule for target.
 CMakeFiles/RalphArcade.dir/all: CMakeFiles/pack-assets.dir/all
 CMakeFiles/RalphArcade.dir/all: _deps/spdlog-build/CMakeFiles/spdlog.dir/all
+CMakeFiles/RalphArcade.dir/all: _deps/backward-build/CMakeFiles/backward.dir/all
 CMakeFiles/RalphArcade.dir/all: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
 CMakeFiles/RalphArcade.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/RalphArcade.dir/all: _deps/tracy-build/CMakeFiles/TracyClient.dir/all
@@ -365,7 +392,7 @@ CMakeFiles/RalphArcade.dir/all: _deps/tracy-build/CMakeFiles/TracyClient.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/RalphArcade.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 59
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 61
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/RalphArcade.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 0
 .PHONY : CMakeFiles/RalphArcade.dir/rule
@@ -390,18 +417,19 @@ CMakeFiles/RalphArcade.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/unit_tests.dir/all: _deps/spdlog-build/CMakeFiles/spdlog.dir/all
+CMakeFiles/unit_tests.dir/all: _deps/backward-build/CMakeFiles/backward.dir/all
 CMakeFiles/unit_tests.dir/all: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
 CMakeFiles/unit_tests.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/unit_tests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/unit_tests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85 "Built target unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88 "Built target unit_tests"
 .PHONY : CMakeFiles/unit_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/unit_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 60
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 62
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/unit_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 0
 .PHONY : CMakeFiles/unit_tests.dir/rule
@@ -413,7 +441,7 @@ unit_tests: CMakeFiles/unit_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/unit_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85 "Finished codegen for target unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88 "Finished codegen for target unit_tests"
 .PHONY : CMakeFiles/unit_tests.dir/codegen
 
 # clean rule for target.
@@ -428,7 +456,7 @@ CMakeFiles/unit_tests.dir/clean:
 _deps/spdlog-build/CMakeFiles/spdlog.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/spdlog-build/CMakeFiles/spdlog.dir/build.make _deps/spdlog-build/CMakeFiles/spdlog.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/spdlog-build/CMakeFiles/spdlog.dir/build.make _deps/spdlog-build/CMakeFiles/spdlog.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=60,61,62,63,64,65,66,67 "Built target spdlog"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=63,64,65,66,67,68,69,70 "Built target spdlog"
 .PHONY : _deps/spdlog-build/CMakeFiles/spdlog.dir/all
 
 # Build rule for subdir invocation for target.
@@ -445,13 +473,77 @@ spdlog: _deps/spdlog-build/CMakeFiles/spdlog.dir/rule
 # codegen rule for target.
 _deps/spdlog-build/CMakeFiles/spdlog.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/spdlog-build/CMakeFiles/spdlog.dir/build.make _deps/spdlog-build/CMakeFiles/spdlog.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=60,61,62,63,64,65,66,67 "Finished codegen for target spdlog"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=63,64,65,66,67,68,69,70 "Finished codegen for target spdlog"
 .PHONY : _deps/spdlog-build/CMakeFiles/spdlog.dir/codegen
 
 # clean rule for target.
 _deps/spdlog-build/CMakeFiles/spdlog.dir/clean:
 	$(MAKE) $(MAKESILENT) -f _deps/spdlog-build/CMakeFiles/spdlog.dir/build.make _deps/spdlog-build/CMakeFiles/spdlog.dir/clean
 .PHONY : _deps/spdlog-build/CMakeFiles/spdlog.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/backward-build/CMakeFiles/backward_object.dir
+
+# All Build rule for target.
+_deps/backward-build/CMakeFiles/backward_object.dir/all:
+	$(MAKE) $(MAKESILENT) -f _deps/backward-build/CMakeFiles/backward_object.dir/build.make _deps/backward-build/CMakeFiles/backward_object.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/backward-build/CMakeFiles/backward_object.dir/build.make _deps/backward-build/CMakeFiles/backward_object.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=23 "Built target backward_object"
+.PHONY : _deps/backward-build/CMakeFiles/backward_object.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/backward-build/CMakeFiles/backward_object.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/backward-build/CMakeFiles/backward_object.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 0
+.PHONY : _deps/backward-build/CMakeFiles/backward_object.dir/rule
+
+# Convenience name for target.
+backward_object: _deps/backward-build/CMakeFiles/backward_object.dir/rule
+.PHONY : backward_object
+
+# codegen rule for target.
+_deps/backward-build/CMakeFiles/backward_object.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f _deps/backward-build/CMakeFiles/backward_object.dir/build.make _deps/backward-build/CMakeFiles/backward_object.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=23 "Finished codegen for target backward_object"
+.PHONY : _deps/backward-build/CMakeFiles/backward_object.dir/codegen
+
+# clean rule for target.
+_deps/backward-build/CMakeFiles/backward_object.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/backward-build/CMakeFiles/backward_object.dir/build.make _deps/backward-build/CMakeFiles/backward_object.dir/clean
+.PHONY : _deps/backward-build/CMakeFiles/backward_object.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/backward-build/CMakeFiles/backward.dir
+
+# All Build rule for target.
+_deps/backward-build/CMakeFiles/backward.dir/all:
+	$(MAKE) $(MAKESILENT) -f _deps/backward-build/CMakeFiles/backward.dir/build.make _deps/backward-build/CMakeFiles/backward.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/backward-build/CMakeFiles/backward.dir/build.make _deps/backward-build/CMakeFiles/backward.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=21,22 "Built target backward"
+.PHONY : _deps/backward-build/CMakeFiles/backward.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/backward-build/CMakeFiles/backward.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/backward-build/CMakeFiles/backward.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles 0
+.PHONY : _deps/backward-build/CMakeFiles/backward.dir/rule
+
+# Convenience name for target.
+backward: _deps/backward-build/CMakeFiles/backward.dir/rule
+.PHONY : backward
+
+# codegen rule for target.
+_deps/backward-build/CMakeFiles/backward.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f _deps/backward-build/CMakeFiles/backward.dir/build.make _deps/backward-build/CMakeFiles/backward.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=21,22 "Finished codegen for target backward"
+.PHONY : _deps/backward-build/CMakeFiles/backward.dir/codegen
+
+# clean rule for target.
+_deps/backward-build/CMakeFiles/backward.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/backward-build/CMakeFiles/backward.dir/build.make _deps/backward-build/CMakeFiles/backward.dir/clean
+.PHONY : _deps/backward-build/CMakeFiles/backward.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/raylib-build/CMakeFiles/uninstall.dir
@@ -492,7 +584,7 @@ _deps/raylib-build/CMakeFiles/uninstall.dir/clean:
 _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=52,53,54,55,56,57,58,59 "Built target raylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=55,56,57,58,59,60,61,62 "Built target raylib"
 .PHONY : _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -509,7 +601,7 @@ raylib: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rule
 # codegen rule for target.
 _deps/raylib-build/raylib/CMakeFiles/raylib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=52,53,54,55,56,57,58,59 "Finished codegen for target raylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=55,56,57,58,59,60,61,62 "Finished codegen for target raylib"
 .PHONY : _deps/raylib-build/raylib/CMakeFiles/raylib.dir/codegen
 
 # clean rule for target.
@@ -524,7 +616,7 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/clean:
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45 "Built target glfw"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
@@ -541,7 +633,7 @@ glfw: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/rule
 # codegen rule for target.
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Finished codegen for target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45 "Finished codegen for target glfw"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/codegen
 
 # clean rule for target.
@@ -556,7 +648,7 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean:
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=86 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=89 "Built target update_mappings"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.
@@ -573,7 +665,7 @@ update_mappings: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_m
 # codegen rule for target.
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=86 "Finished codegen for target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=89 "Finished codegen for target update_mappings"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/codegen
 
 # clean rule for target.
@@ -620,7 +712,7 @@ _deps/tracy-build/CMakeFiles/TracyClient.dir/clean:
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=43,44 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=46,47 "Built target gmock"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -637,7 +729,7 @@ gmock: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=43,44 "Finished codegen for target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=46,47 "Finished codegen for target gmock"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen
 
 # clean rule for target.
@@ -653,7 +745,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletes
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=45,46 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=48,49 "Built target gmock_main"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -670,7 +762,7 @@ gmock_main: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=45,46 "Finished codegen for target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=48,49 "Finished codegen for target gmock_main"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen
 
 # clean rule for target.
@@ -685,7 +777,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=47,48 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=50,51 "Built target gtest"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -702,7 +794,7 @@ gtest: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=47,48 "Finished codegen for target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=50,51 "Finished codegen for target gtest"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen
 
 # clean rule for target.
@@ -717,7 +809,7 @@ _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=49,50 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=52,53 "Built target gtest_main"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -734,7 +826,7 @@ gtest_main: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=49,50 "Finished codegen for target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=52,53 "Finished codegen for target gtest_main"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen
 
 # clean rule for target.

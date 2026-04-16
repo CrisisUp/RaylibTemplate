@@ -353,6 +353,7 @@ RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/main.
 RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/build.make
 RalphArcade.app/Contents/MacOS/RalphArcade: _deps/raylib-build/raylib/libraylib.a
 RalphArcade.app/Contents/MacOS/RalphArcade: _deps/spdlog-build/libspdlogd.a
+RalphArcade.app/Contents/MacOS/RalphArcade: _deps/backward-build/libbackward.a
 RalphArcade.app/Contents/MacOS/RalphArcade: _deps/tracy-build/libTracyClient.a
 RalphArcade.app/Contents/MacOS/RalphArcade: _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
 RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/link.txt

@@ -11,6 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.3.1/CMakeCCompiler.cmake"
   "CMakeFiles/4.3.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.3.1/CMakeSystem.cmake"
+  "_deps/backward-src/BackwardConfig.cmake"
+  "_deps/backward-src/CMakeLists.txt"
   "_deps/googletest-src/CMakeLists.txt"
   "_deps/googletest-src/googlemock/CMakeLists.txt"
   "_deps/googletest-src/googlemock/cmake/gmock.pc.in"
@@ -119,6 +121,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/spdlog-subbuild/CMakeLists.txt"
+  "_deps/backward-subbuild/CMakeLists.txt"
   "_deps/raylib-subbuild/CMakeLists.txt"
   "_deps/tracy-subbuild/CMakeLists.txt"
   "_deps/googletest-subbuild/CMakeLists.txt"
@@ -129,6 +132,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "RalphArcade.app/Contents/Info.plist"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/spdlog-build/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "_deps/backward-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/raylib-build/cmake_uninstall.cmake"
   "_deps/raylib-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/raylib-build/raylib/raylib.pc"
@@ -161,6 +165,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/RalphArcade.dir/DependInfo.cmake"
   "CMakeFiles/unit_tests.dir/DependInfo.cmake"
   "_deps/spdlog-build/CMakeFiles/spdlog.dir/DependInfo.cmake"
+  "_deps/backward-build/CMakeFiles/backward_object.dir/DependInfo.cmake"
+  "_deps/backward-build/CMakeFiles/backward.dir/DependInfo.cmake"
   "_deps/raylib-build/CMakeFiles/uninstall.dir/DependInfo.cmake"
   "_deps/raylib-build/raylib/CMakeFiles/raylib.dir/DependInfo.cmake"
   "_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"

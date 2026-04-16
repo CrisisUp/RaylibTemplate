@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Build backward as a shared library
+BACKWARD_SHARED:BOOL=OFF
+
+//Enable tests
+BACKWARD_TESTS:BOOL=OFF
+
 //Build the examples.
 BUILD_EXAMPLES:BOOL=OFF
 
@@ -350,6 +356,10 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 FETCHCONTENT_QUIET:BOOL=ON
 
 //When not empty, overrides where to find pre-populated content
+// for backward
+FETCHCONTENT_SOURCE_DIR_BACKWARD:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for googletest
 FETCHCONTENT_SOURCE_DIR_GOOGLETEST:PATH=
 
@@ -367,6 +377,9 @@ FETCHCONTENT_SOURCE_DIR_TRACY:PATH=
 
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of backward
+FETCHCONTENT_UPDATES_DISCONNECTED_BACKWARD:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of googletest
 FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
@@ -423,6 +436,51 @@ INCLUDE_EVERYTHING:BOOL=OFF
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
+
+//Path to a file.
+LIBBFD_INCLUDE_DIR:PATH=LIBBFD_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+LIBBFD_LIBRARY:FILEPATH=LIBBFD_LIBRARY-NOTFOUND
+
+//Path to a library.
+LIBBZ2_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libbz2.tbd
+
+//Path to a file.
+LIBDL_INCLUDE_DIR:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+
+//Path to a library.
+LIBDL_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libdl.tbd
+
+//Path to a file.
+LIBDWARF_INCLUDE_DIR:PATH=LIBDWARF_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+LIBDWARF_LIBRARY:FILEPATH=LIBDWARF_LIBRARY-NOTFOUND
+
+//Path to a file.
+LIBDW_INCLUDE_DIR:PATH=LIBDW_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+LIBDW_LIBRARY:FILEPATH=LIBDW_LIBRARY-NOTFOUND
+
+//Path to a file.
+LIBELF_INCLUDE_DIR:PATH=LIBELF_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+LIBELF_LIBRARY:FILEPATH=LIBELF_LIBRARY-NOTFOUND
+
+//Path to a library.
+LIBLZMA_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/liblzma.tbd
+
+//Path to a library.
+LIBPTHREAD_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libpthread.tbd
+
+//Path to a library.
+LIBZSTD_LIBRARY:FILEPATH=/opt/homebrew/lib/libzstd.dylib
+
+//Path to a library.
+LIBZ_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd
 
 //Build fat library for both i386 and x86_64 on macOS
 MACOS_FATLIB:BOOL=OFF
@@ -527,6 +585,30 @@ SPDLOG_WCHAR_FILENAMES:BOOL=OFF
 //non supported option
 SPDLOG_WCHAR_SUPPORT:BOOL=OFF
 
+//Auto detect backward's stack details dependencies
+STACK_DETAILS_AUTO_DETECT:BOOL=TRUE
+
+//Use backtrace from (e)glibc for symbols resolution
+STACK_DETAILS_BACKTRACE_SYMBOL:BOOL=FALSE
+
+//Use libbfd to read debug info
+STACK_DETAILS_BFD:BOOL=FALSE
+
+//Use libdw to read debug info
+STACK_DETAILS_DW:BOOL=FALSE
+
+//Use libdwarf/libelf to read debug info
+STACK_DETAILS_DWARF:BOOL=FALSE
+
+//Use backtrace from (e)glibc for stack walking
+STACK_WALKING_BACKTRACE:BOOL=FALSE
+
+//Use libunwind for stack walking
+STACK_WALKING_LIBUNWIND:BOOL=FALSE
+
+//Use compiler's unwind API
+STACK_WALKING_UNWIND:BOOL=TRUE
+
 //Enfore callstack collection for tracy regions
 TRACY_CALLSTACK:BOOL=OFF
 
@@ -618,6 +700,15 @@ USE_SANITIZERS:BOOL=ON
 WITH_PIC:BOOL=OFF
 
 //Value Computed by CMake
+backward_BINARY_DIR:STATIC=/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build
+
+//Value Computed by CMake
+backward_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+backward_SOURCE_DIR:STATIC=/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-src
+
+//Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-build/googlemock
 
 //Value Computed by CMake
@@ -689,6 +780,18 @@ spdlog_SOURCE_DIR:STATIC=/Users/cristiano/Desktop/teste/RaylibTemplate/build/_de
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: BACKWARD_DEFINITIONS
+BACKWARD_DEFINITIONS-ADVANCED:INTERNAL=1
+//BACKWARD_DEFINITIONS
+BACKWARD_DEFINITIONS:INTERNAL=BACKWARD_HAS_UNWIND=1;BACKWARD_HAS_LIBUNWIND=0;BACKWARD_HAS_BACKTRACE=0;BACKWARD_HAS_BACKTRACE_SYMBOL=1;BACKWARD_HAS_DW=0;BACKWARD_HAS_BFD=0;BACKWARD_HAS_DWARF=0
+//ADVANCED property for variable: BACKWARD_INCLUDE_DIRS
+BACKWARD_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//BACKWARD_INCLUDE_DIRS
+BACKWARD_INCLUDE_DIRS:INTERNAL=$<BUILD_INTERFACE:/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-src>;$<INSTALL_INTERFACE:include>
+//ADVANCED property for variable: BACKWARD_LIBRARIES
+BACKWARD_LIBRARIES-ADVANCED:INTERNAL=1
+//BACKWARD_LIBRARIES
+BACKWARD_LIBRARIES:INTERNAL=
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -819,7 +922,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -882,6 +985,8 @@ CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DOXYGEN_EXECUTABLE
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
+//Details about finding Backward
+FIND_PACKAGE_MESSAGE_DETAILS_Backward:INTERNAL=[$<BUILD_INTERFACE:/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-src>;$<INSTALL_INTERFACE:include>][v()]
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/python3.14][found components: Interpreter ][v3.14.4()]
 //Details about finding Threads
@@ -892,6 +997,26 @@ GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 GLFW_PKG_CONFIG_LIBS_PRIVATE:INTERNAL= -framework Cocoa -framework IOKit -framework CoreFoundation
 //GLFW pkg-config Requires.private
 GLFW_PKG_CONFIG_REQUIRES_PRIVATE:INTERNAL=
+//ADVANCED property for variable: LIBBFD_INCLUDE_DIR
+LIBBFD_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBBFD_LIBRARY
+LIBBFD_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBDL_INCLUDE_DIR
+LIBDL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBDL_LIBRARY
+LIBDL_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBDWARF_INCLUDE_DIR
+LIBDWARF_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBDWARF_LIBRARY
+LIBDWARF_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBDW_INCLUDE_DIR
+LIBDW_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBDW_LIBRARY
+LIBDW_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBELF_INCLUDE_DIR
+LIBELF_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBELF_LIBRARY
+LIBELF_LIBRARY-ADVANCED:INTERNAL=1
 //Replace any OFF by default with ${OFF} to have it covered by
 // this option
 OFF:INTERNAL=OFF

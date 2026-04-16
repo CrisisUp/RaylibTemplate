@@ -21,6 +21,17 @@
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-build/CMakeFiles/install.dir
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-build/CMakeFiles/install/local.dir
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-build/CMakeFiles/install/strip.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/backward_object.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/backward.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/package.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/package_source.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/test.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/edit_cache.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/rebuild_cache.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/list_install_components.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/install.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/install/local.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/backward-build/CMakeFiles/install/strip.dir
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-build/CMakeFiles/uninstall.dir
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-build/CMakeFiles/package.dir
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-build/CMakeFiles/package_source.dir
