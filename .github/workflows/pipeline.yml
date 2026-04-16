@@ -16,7 +16,7 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         submodules: recursive
 
@@ -34,7 +34,7 @@ jobs:
         cmake --build build-cppcheck --target cppcheck
 
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: '3.x'
 
@@ -66,7 +66,7 @@ jobs:
 
     - name: Upload Coverage to Codecov
       if: runner.os == 'Linux'
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v6
       with:
         files: coverage.info
         token: ${{ secrets.CODECOV_TOKEN }} # Opcional se o repo for público, mas recomendado
@@ -95,7 +95,7 @@ jobs:
         cpack -C Release
 
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: RalphArcade-${{ runner.os }}-Artifacts
         path: |
@@ -109,10 +109,10 @@ jobs:
     name: Build Web (Emscripten)
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     
     - name: Set up Emscripten
-      uses: mymindstorm/setup-emsdk@v14
+      uses: mymindstorm/setup-emsdk@v16
 
     - name: Configure CMake (Web)
       run: emcmake cmake -B build-web -DCMAKE_BUILD_TYPE=Release
@@ -121,7 +121,7 @@ jobs:
       run: cmake --build build-web
 
     - name: Upload Web Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: RalphArcade-Web
         path: |
@@ -139,7 +139,7 @@ jobs:
       contents: write
     steps:
     - name: Download all artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         path: ./artifacts
 
@@ -149,7 +149,7 @@ jobs:
         find ./artifacts -type f \( -name "*.zip" -o -name "*.dmg" -o -name "*.exe" -o -name "*.deb" -o -name "*.tar.gz" -o -name "*.html" -o -name "*.js" -o -name "*.wasm" -o -name "*.data" \) -exec cp {} ./release-files/ \;
 
     - name: Create Release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       with:
         files: ./release-files/*
         generate_release_notes: true
