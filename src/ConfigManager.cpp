@@ -25,6 +25,20 @@ void ConfigManager::Load(const std::string& fileName) {
     file.close();
 }
 
+void ConfigManager::Save(const std::string& fileName) {
+    std::ofstream file(fileName);
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open config file " << fileName << " for writing.\n";
+        return;
+    }
+
+    file << "# Ralph Arcade - Auto-generated Configuration\n\n";
+    for (auto const& [key, val] : settings) {
+        file << key << "=" << val << "\n";
+    }
+    file.close();
+}
+
 float ConfigManager::GetFloat(const std::string& key, float defaultValue) {
     if (settings.find(key) != settings.end()) {
         try {

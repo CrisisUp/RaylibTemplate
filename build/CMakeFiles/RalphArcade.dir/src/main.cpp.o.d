@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/main.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/main.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Game.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \
@@ -920,4 +921,31 @@ CMakeFiles/RalphArcade.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/dyld_kernel.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsid_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsobj_id_t.h \
-  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-src/public/tracy/../client/TracyScoped.hpp
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-src/public/tracy/../client/TracyScoped.hpp \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/Logger.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/spdlog.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/common.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/null_mutex.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/tweakme.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/fmt/fmt.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/fmt/bundled/core.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/fmt/bundled/format.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/registry.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/periodic_worker.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/condition_variable \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_callback.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/intrusive_shared_ptr.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_state.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/atomic_unique_lock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/intrusive_list_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_token.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/synchronous_factory.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/logger.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/backtracer.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/circular_q.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/log_msg_buffer.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/log_msg.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/version.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/csignal \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/signal.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream

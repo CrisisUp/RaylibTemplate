@@ -7,8 +7,22 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(FetchContent)
 enable_testing()
 
+# --- Project Metadata ---
+set(PROJECT_AUTHOR "Ralph Dev Team")
+set(PROJECT_DESCRIPTION "Um jogo de arcade frenético com Ralph!")
+set(PROJECT_BUNDLE_ID "com.ralph.arcade")
+
 # --- Options ---
 option(TRACY_ENABLE "Enable Tracy profiler" ON)
+option(USE_SANITIZERS "Enable ASan and UBSan (Debug only)" ON)
+
+# --- Sanitizers Configuration ---
+if(USE_SANITIZERS AND NOT MSVC AND NOT EMSCRIPTEN)
+    set(SANITIZER_FLAGS "-fsanitize=address,undefined -fno-omit-frame-pointer")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SANITIZER_FLAGS}")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${SANITIZER_FLAGS}")
+    message(STATUS "Sanitizers ativos: Address e Undefined Behavior")
+endif()
 
 # --- Emscripten / Web Support ---
 if(EMSCRIPTEN)
@@ -66,13 +80,23 @@ if(CLANG_FORMAT_EXE)
     add_custom_target(format COMMAND ${CLANG_FORMAT_EXE} -i -style=file ${ALL_CXX_SOURCE_FILES})
 endif()
 
-# --- Asset Validation ---
+# --- Asset Validation & Packing ---
 find_package(Python3 REQUIRED)
 if(Python3_FOUND)
+    # Target de validação
     add_custom_target(validate-assets
         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/validate_assets.py
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     )
+
+    # Comando para empacotar assets
+    add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/resources.pak
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/pack_assets.py
+        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/scripts/pack_assets.py
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMENT "Empacotando assets em resources.pak..."
+    )
+    add_custom_target(pack-assets ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/resources.pak)
 endif()
 
 # --- Include Directories ---
@@ -83,7 +107,22 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 list(FILTER SOURCES EXCLUDE REGEX "src/main.cpp")
 
 # --- Executable ---
-add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
+if(APPLE AND NOT EMSCRIPTEN)
+    add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES} src/main.cpp)
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        MACOSX_BUNDLE_GUI_IDENTIFIER ${PROJECT_BUNDLE_ID}
+        MACOSX_BUNDLE_BUNDLE_NAME ${PROJECT_NAME}
+        MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION}
+        MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+        MACOSX_BUNDLE_COPYRIGHT "Copyright (c) 2026 ${PROJECT_AUTHOR}"
+    )
+else()
+    add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
+endif()
+
+# Garante que o pack-assets rode antes do executável
+add_dependencies(${PROJECT_NAME} pack-assets)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib spdlog::spdlog)
 
 if(TRACY_ENABLE AND NOT EMSCRIPTEN)
@@ -113,23 +152,45 @@ if(NOT MSVC AND NOT EMSCRIPTEN)
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_SOURCE_DIR}/resources $<TARGET_FILE_DIR:${PROJECT_NAME}>/resources
         COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_SOURCE_DIR}/config.txt $<TARGET_FILE_DIR:${PROJECT_NAME}>/config.txt
+        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/resources.pak $<TARGET_FILE_DIR:${PROJECT_NAME}>/resources.pak
     )
 endif()
 
 # --- Installation & CPack ---
 if(NOT EMSCRIPTEN)
-    install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION . BUNDLE DESTINATION .)
-    install(DIRECTORY resources DESTINATION .)
-    install(FILES config.txt DESTINATION .)
+    if(APPLE)
+        # Install as a .app Bundle
+        install(TARGETS ${PROJECT_NAME} BUNDLE DESTINATION .)
+        # No macOS Bundle, resources.pak vai para Contents/Resources
+        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources.pak DESTINATION ${PROJECT_NAME}.app/Contents/Resources)
+        install(FILES config.txt DESTINATION ${PROJECT_NAME}.app/Contents/Resources)
+    else()
+        # Install as a normal executable
+        install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources.pak DESTINATION share/${PROJECT_NAME})
+        install(FILES config.txt DESTINATION share/${PROJECT_NAME})
+    endif()
     
-    set(CPACK_PACKAGE_NAME "RalphArcade")
-    set(CPACK_PACKAGE_VERSION "1.0.0")
+    set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
+    set(CPACK_PACKAGE_VENDOR "${PROJECT_AUTHOR}")
+    set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
+    set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
+    set(CPACK_PACKAGE_CONTACT "ralph-support@example.com")
+    set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+    set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
+
     if(APPLE)
         set(CPACK_GENERATOR "DragNDrop")
     elseif(WIN32)
-        set(CPACK_GENERATOR "ZIP;NSIS")
+        set(CPACK_GENERATOR "NSIS;ZIP")
+        set(CPACK_NSIS_MODIFY_PATH ON)
+        set(CPACK_NSIS_DISPLAY_NAME "Ralph Arcade Installer")
+        set(CPACK_NSIS_PACKAGE_NAME "RalphArcade")
     else()
-        set(CPACK_GENERATOR "TGZ;DEB")
+        set(CPACK_GENERATOR "DEB;TGZ")
+        set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${PROJECT_AUTHOR}")
+        set(CPACK_DEBIAN_PACKAGE_SECTION "games")
     endif()
+    
     include(CPack)
 endif()

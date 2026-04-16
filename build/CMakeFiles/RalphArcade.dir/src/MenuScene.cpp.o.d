@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/MenuScene.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/MenuScene.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Scene.h \
@@ -813,4 +814,5 @@ CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o: \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/ParticleManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Enemy.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Boss.h \
-  /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/include/OptionsScene.h

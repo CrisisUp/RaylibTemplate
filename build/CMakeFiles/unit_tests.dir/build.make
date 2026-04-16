@@ -212,10 +212,24 @@ CMakeFiles/unit_tests.dir/src/LocalizationManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/src/LocalizationManager.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/LocalizationManager.cpp -o CMakeFiles/unit_tests.dir/src/LocalizationManager.cpp.s
 
+CMakeFiles/unit_tests.dir/src/Logger.cpp.o: CMakeFiles/unit_tests.dir/flags.make
+CMakeFiles/unit_tests.dir/src/Logger.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/Logger.cpp
+CMakeFiles/unit_tests.dir/src/Logger.cpp.o: CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/unit_tests.dir/src/Logger.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/unit_tests.dir/src/Logger.cpp.o -MF CMakeFiles/unit_tests.dir/src/Logger.cpp.o.d -o CMakeFiles/unit_tests.dir/src/Logger.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/Logger.cpp
+
+CMakeFiles/unit_tests.dir/src/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/src/Logger.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cristiano/Desktop/teste/RaylibTemplate/src/Logger.cpp > CMakeFiles/unit_tests.dir/src/Logger.cpp.i
+
+CMakeFiles/unit_tests.dir/src/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/src/Logger.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/Logger.cpp -o CMakeFiles/unit_tests.dir/src/Logger.cpp.s
+
 CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/MenuScene.cpp
 CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o: CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o -MF CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o.d -o CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/MenuScene.cpp
 
 CMakeFiles/unit_tests.dir/src/MenuScene.cpp.i: cmake_force
@@ -226,10 +240,24 @@ CMakeFiles/unit_tests.dir/src/MenuScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/src/MenuScene.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/MenuScene.cpp -o CMakeFiles/unit_tests.dir/src/MenuScene.cpp.s
 
+CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o: CMakeFiles/unit_tests.dir/flags.make
+CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/OptionsScene.cpp
+CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o: CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o -MF CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o.d -o CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/OptionsScene.cpp
+
+CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cristiano/Desktop/teste/RaylibTemplate/src/OptionsScene.cpp > CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.i
+
+CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/OptionsScene.cpp -o CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.s
+
 CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/ParticleManager.cpp
 CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o: CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o -MF CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o.d -o CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/ParticleManager.cpp
 
 CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.i: cmake_force
@@ -243,7 +271,7 @@ CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.s: cmake_force
 CMakeFiles/unit_tests.dir/src/Player.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/src/Player.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/Player.cpp
 CMakeFiles/unit_tests.dir/src/Player.cpp.o: CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/unit_tests.dir/src/Player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/unit_tests.dir/src/Player.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/unit_tests.dir/src/Player.cpp.o -MF CMakeFiles/unit_tests.dir/src/Player.cpp.o.d -o CMakeFiles/unit_tests.dir/src/Player.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/Player.cpp
 
 CMakeFiles/unit_tests.dir/src/Player.cpp.i: cmake_force
@@ -257,7 +285,7 @@ CMakeFiles/unit_tests.dir/src/Player.cpp.s: cmake_force
 CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o: CMakeFiles/unit_tests.dir/flags.make
 CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/ResourceManager.cpp
 CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o: CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o -MF CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o.d -o CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/ResourceManager.cpp
 
 CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.i: cmake_force
@@ -267,6 +295,20 @@ CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.i: cmake_force
 CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/ResourceManager.cpp -o CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.s
+
+CMakeFiles/unit_tests.dir/src/Utils.cpp.o: CMakeFiles/unit_tests.dir/flags.make
+CMakeFiles/unit_tests.dir/src/Utils.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/Utils.cpp
+CMakeFiles/unit_tests.dir/src/Utils.cpp.o: CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/unit_tests.dir/src/Utils.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/unit_tests.dir/src/Utils.cpp.o -MF CMakeFiles/unit_tests.dir/src/Utils.cpp.o.d -o CMakeFiles/unit_tests.dir/src/Utils.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/Utils.cpp
+
+CMakeFiles/unit_tests.dir/src/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/src/Utils.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cristiano/Desktop/teste/RaylibTemplate/src/Utils.cpp > CMakeFiles/unit_tests.dir/src/Utils.cpp.i
+
+CMakeFiles/unit_tests.dir/src/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/src/Utils.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/Utils.cpp -o CMakeFiles/unit_tests.dir/src/Utils.cpp.s
 
 # Object files for target unit_tests
 unit_tests_OBJECTS = \
@@ -280,10 +322,13 @@ unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/src/GameplayScene.cpp.o" \
 "CMakeFiles/unit_tests.dir/src/InputManager.cpp.o" \
 "CMakeFiles/unit_tests.dir/src/LocalizationManager.cpp.o" \
+"CMakeFiles/unit_tests.dir/src/Logger.cpp.o" \
 "CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o" \
+"CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o" \
 "CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o" \
 "CMakeFiles/unit_tests.dir/src/Player.cpp.o" \
-"CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o"
+"CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o" \
+"CMakeFiles/unit_tests.dir/src/Utils.cpp.o"
 
 # External object files for target unit_tests
 unit_tests_EXTERNAL_OBJECTS =
@@ -298,10 +343,13 @@ unit_tests: CMakeFiles/unit_tests.dir/src/Game.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/src/GameplayScene.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/src/InputManager.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/src/LocalizationManager.cpp.o
+unit_tests: CMakeFiles/unit_tests.dir/src/Logger.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/src/MenuScene.cpp.o
+unit_tests: CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/src/Player.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.o
+unit_tests: CMakeFiles/unit_tests.dir/src/Utils.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/build.make
 unit_tests: lib/libgtest_main.a
 unit_tests: _deps/raylib-build/raylib/libraylib.a
@@ -309,7 +357,7 @@ unit_tests: _deps/spdlog-build/libspdlogd.a
 unit_tests: lib/libgtest.a
 unit_tests: _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
 unit_tests: CMakeFiles/unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable unit_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

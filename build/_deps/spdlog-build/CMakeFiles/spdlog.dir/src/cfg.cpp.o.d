@@ -1,4 +1,5 @@
 _deps/spdlog-build/CMakeFiles/spdlog.dir/src/cfg.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/src/cfg.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/cfg/helpers-inl.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/cfg/helpers.h \

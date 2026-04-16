@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/LocalizationManager.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/LocalizationManager.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/LocalizationManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string \

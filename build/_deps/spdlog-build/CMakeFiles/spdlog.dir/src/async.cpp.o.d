@@ -1,4 +1,5 @@
 _deps/spdlog-build/CMakeFiles/spdlog.dir/src/async.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/src/async.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/async.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/async_logger.h \

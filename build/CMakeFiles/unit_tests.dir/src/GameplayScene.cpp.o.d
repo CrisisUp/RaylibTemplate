@@ -1,4 +1,5 @@
 CMakeFiles/unit_tests.dir/src/GameplayScene.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/GameplayScene.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/GameplayScene.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Scene.h \

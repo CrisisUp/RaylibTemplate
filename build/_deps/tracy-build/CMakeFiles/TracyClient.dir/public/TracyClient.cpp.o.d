@@ -1,4 +1,5 @@
 _deps/tracy-build/CMakeFiles/TracyClient.dir/public/TracyClient.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-src/public/TracyClient.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-src/public/common/TracySystem.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h \

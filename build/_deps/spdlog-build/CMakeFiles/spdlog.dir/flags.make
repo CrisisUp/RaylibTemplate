@@ -6,7 +6,7 @@ CXX_DEFINES = -DSPDLOG_COMPILED_LIB
 
 CXX_INCLUDES = -I/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include
 
-CXX_FLAGSarm64 = -g -std=c++17 -arch arm64
+CXX_FLAGSarm64 =  -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=c++17 -arch arm64
 
-CXX_FLAGS = -g -std=c++17 -arch arm64
+CXX_FLAGS =  -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=c++17 -arch arm64
 

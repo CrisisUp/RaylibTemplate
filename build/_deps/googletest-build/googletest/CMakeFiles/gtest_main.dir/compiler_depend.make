@@ -857,6 +857,7 @@ _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o:
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h \
   _deps/googletest-src/googletest/include/gtest/gtest-death-test.h \
   _deps/googletest-src/googletest/include/gtest/gtest-matchers.h \
@@ -1167,6 +1168,8 @@ _deps/googletest-src/googletest/include/gtest/gtest-typed-test.h:
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/optional:
+
+/Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream:
 

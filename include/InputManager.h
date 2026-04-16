@@ -12,7 +12,8 @@ enum GameAction {
     ACTION_DASH,
     ACTION_START,
     ACTION_CONFIRM,
-    ACTION_PAUSE
+    ACTION_PAUSE,
+    ACTION_OPTIONS
 };
 
 class InputManager {

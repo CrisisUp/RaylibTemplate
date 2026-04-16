@@ -1,0 +1,62 @@
+name: Ralph Arcade Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    name: Build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install Dependencies (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev python3
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Configure CMake
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+    - name: Run Asset Validation
+      run: cmake --build build --target validate-assets
+
+    - name: Build Project
+      run: cmake --build build --config Release
+
+    - name: Run Unit Tests
+      run: |
+        cd build
+        ctest -C Release --output-on-failure
+
+    - name: Generate Package (CPack)
+      run: |
+        cd build
+        cpack -C Release
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: RalphArcade-${{ runner.os }}-Installer
+        path: |
+          build/*.zip
+          build/*.dmg
+          build/*.exe
+          build/*.deb
+          build/*.tar.gz

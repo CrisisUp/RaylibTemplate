@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/Boss.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/Boss.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Boss.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \

@@ -10,6 +10,7 @@ void InputManager::Init() {
     bindings[ACTION_START] = KEY_ENTER;
     bindings[ACTION_CONFIRM] = KEY_ENTER;
     bindings[ACTION_PAUSE] = KEY_P;
+    bindings[ACTION_OPTIONS] = KEY_O;
 }
 
 bool InputManager::IsActionDown(GameAction action) {

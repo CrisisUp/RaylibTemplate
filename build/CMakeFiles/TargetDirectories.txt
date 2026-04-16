@@ -1,4 +1,5 @@
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/validate-assets.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/pack-assets.dir
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/RalphArcade.dir
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/unit_tests.dir
 /Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles/package.dir

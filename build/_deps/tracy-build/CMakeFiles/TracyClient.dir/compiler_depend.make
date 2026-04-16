@@ -982,6 +982,7 @@ _deps/tracy-build/CMakeFiles/TracyClient.dir/public/TracyClient.cpp.o: _deps/tra
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdbool.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/tracy-src/public/common/TracyAlign.hpp \
   _deps/tracy-src/public/common/TracyAlloc.hpp \
   _deps/tracy-src/public/common/TracyApi.h \
@@ -1207,6 +1208,8 @@ _deps/tracy-src/public/libbacktrace/dwarf.cpp:
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_time.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h:
+
+/Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h:
 

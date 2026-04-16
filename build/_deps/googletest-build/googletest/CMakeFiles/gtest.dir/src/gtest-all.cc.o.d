@@ -1,4 +1,5 @@
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googletest/src/gtest-all.cc \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googletest/include/gtest/gtest.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \

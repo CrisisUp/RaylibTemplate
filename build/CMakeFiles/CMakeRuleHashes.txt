@@ -1,4 +1,6 @@
 # Hashes of file build rules.
+4e866577907339694a5c9560b1704ec8 CMakeFiles/pack-assets
 8b7ab68fa7994c262810b17db997e07b CMakeFiles/validate-assets
 c01524dbce96b968ef6e6133dfdc7b91 _deps/raylib-build/CMakeFiles/uninstall
 3b804979a41d133dd31bc8afcd74c22d _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings
+d298096fb295213179baebfc9482efbc resources.pak

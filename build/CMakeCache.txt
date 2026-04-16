@@ -602,6 +602,9 @@ Tracy_SOURCE_DIR:STATIC=/Users/cristiano/Desktop/teste/RaylibTemplate/build/_dep
 //Link raylib against system GLFW instead of embedded one
 USE_EXTERNAL_GLFW:STRING=OFF
 
+//Enable ASan and UBSan (Debug only)
+USE_SANITIZERS:BOOL=ON
+
 //Compile static library as position-independent code
 WITH_PIC:BOOL=OFF
 

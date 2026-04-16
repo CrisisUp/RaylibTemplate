@@ -1,4 +1,5 @@
 CMakeFiles/unit_tests.dir/tests/test_logic.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/tests/test_logic.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googletest/include/gtest/gtest.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \

@@ -1,4 +1,5 @@
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googlemock/src/gmock-all.cc \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googlemock/include/gmock/gmock.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googlemock/include/gmock/gmock-actions.h \

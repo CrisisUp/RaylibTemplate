@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/FloatingTextManager.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/FloatingTextManager.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \

@@ -93,6 +93,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake"
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake"
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake"
+  "/opt/homebrew/share/cmake/Modules/MacOSXBundleInfo.plist.in"
   "/opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake"
@@ -122,6 +123,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/googletest-subbuild/CMakeLists.txt"
   "CPackConfig.cmake"
   "CPackSourceConfig.cmake"
+  "RalphArcade.app/Contents/MacOS"
+  "RalphArcade.app/Contents/Info.plist"
+  "RalphArcade.app/Contents/Info.plist"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/spdlog-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/raylib-build/cmake_uninstall.cmake"
@@ -152,6 +156,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/validate-assets.dir/DependInfo.cmake"
+  "CMakeFiles/pack-assets.dir/DependInfo.cmake"
   "CMakeFiles/RalphArcade.dir/DependInfo.cmake"
   "CMakeFiles/unit_tests.dir/DependInfo.cmake"
   "_deps/spdlog-build/CMakeFiles/spdlog.dir/DependInfo.cmake"

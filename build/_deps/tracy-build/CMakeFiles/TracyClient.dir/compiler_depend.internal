@@ -983,6 +983,7 @@ _deps/tracy-build/CMakeFiles/TracyClient.dir/public/TracyClient.cpp.o
  /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdbool.h
  /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h
  /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt
  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-src/public/common/TracyAlign.hpp
  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-src/public/common/TracyAlloc.hpp
  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-src/public/common/TracyApi.h

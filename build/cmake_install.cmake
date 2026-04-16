@@ -58,21 +58,15 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/Users/cristiano/Desktop/teste/RaylibTemplate/build/RalphArcade")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./RalphArcade" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./RalphArcade")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" -u -r "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./RalphArcade")
-    endif()
-  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/cristiano/Desktop/teste/RaylibTemplate/build/RalphArcade.app" USE_SOURCE_PERMISSIONS)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/cristiano/Desktop/teste/RaylibTemplate/resources")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/RalphArcade.app/Contents/Resources" TYPE FILE FILES "/Users/cristiano/Desktop/teste/RaylibTemplate/resources.pak")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE FILE FILES "/Users/cristiano/Desktop/teste/RaylibTemplate/config.txt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/RalphArcade.app/Contents/Resources" TYPE FILE FILES "/Users/cristiano/Desktop/teste/RaylibTemplate/config.txt")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

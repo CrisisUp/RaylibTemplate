@@ -858,6 +858,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
  /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h
  /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h
  /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt
  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googlemock/include/gmock/gmock-actions.h
  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googlemock/include/gmock/gmock-cardinalities.h
  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/googletest-src/googlemock/include/gmock/gmock-function-mocker.h

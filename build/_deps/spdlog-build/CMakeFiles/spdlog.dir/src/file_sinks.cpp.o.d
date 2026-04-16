@@ -1,4 +1,5 @@
 _deps/spdlog-build/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/src/file_sinks.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/file_helper-inl.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/spdlog-src/include/spdlog/details/file_helper.h \

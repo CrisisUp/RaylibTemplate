@@ -830,6 +830,7 @@ _deps/spdlog-build/CMakeFiles/spdlog.dir/src/async.cpp.o: _deps/spdlog-src/src/a
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/spdlog-src/include/spdlog/async.h \
   _deps/spdlog-src/include/spdlog/async_logger-inl.h \
   _deps/spdlog-src/include/spdlog/async_logger.h \
@@ -1606,6 +1607,7 @@ _deps/spdlog-build/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o: _deps/
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/spdlog-src/include/spdlog/fmt/bundled/core.h \
   _deps/spdlog-src/include/spdlog/fmt/bundled/format-inl.h \
   _deps/spdlog-src/include/spdlog/fmt/bundled/format.h
@@ -2439,6 +2441,7 @@ _deps/spdlog-build/CMakeFiles/spdlog.dir/src/cfg.cpp.o: _deps/spdlog-src/src/cfg
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/spdlog-src/include/spdlog/cfg/helpers-inl.h \
   _deps/spdlog-src/include/spdlog/cfg/helpers.h \
   _deps/spdlog-src/include/spdlog/common.h \
@@ -3288,6 +3291,7 @@ _deps/spdlog-build/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o: _deps/spdlog-src
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/spdlog-src/include/spdlog/async.h \
   _deps/spdlog-src/include/spdlog/async_logger.h \
   _deps/spdlog-src/include/spdlog/common.h \
@@ -4141,6 +4145,7 @@ _deps/spdlog-build/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o: _deps/spdlog-src/
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/spdlog-src/include/spdlog/common.h \
   _deps/spdlog-src/include/spdlog/details/file_helper-inl.h \
   _deps/spdlog-src/include/spdlog/details/file_helper.h \
@@ -5008,6 +5013,7 @@ _deps/spdlog-build/CMakeFiles/spdlog.dir/src/spdlog.cpp.o: _deps/spdlog-src/src/
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/spdlog-src/include/spdlog/common-inl.h \
   _deps/spdlog-src/include/spdlog/common.h \
   _deps/spdlog-src/include/spdlog/details/backtracer-inl.h \
@@ -5873,6 +5879,7 @@ _deps/spdlog-build/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: _deps/spdlog-sr
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   _deps/spdlog-src/include/spdlog/async.h \
   _deps/spdlog-src/include/spdlog/async_logger.h \
   _deps/spdlog-src/include/spdlog/common.h \
@@ -5984,8 +5991,6 @@ _deps/spdlog-src/include/spdlog/details/null_mutex.h:
 
 _deps/spdlog-src/include/spdlog/details/mpmc_blocking_q.h:
 
-_deps/spdlog-src/include/spdlog/details/log_msg_buffer.h:
-
 _deps/spdlog-src/include/spdlog/details/circular_q.h:
 
 _deps/spdlog-src/include/spdlog/details/backtracer.h:
@@ -5993,6 +5998,10 @@ _deps/spdlog-src/include/spdlog/details/backtracer.h:
 _deps/spdlog-src/include/spdlog/common.h:
 
 _deps/spdlog-src/include/spdlog/async_logger.h:
+
+_deps/spdlog-src/include/spdlog/details/log_msg_buffer.h:
+
+/Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h:
 

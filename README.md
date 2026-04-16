@@ -50,14 +50,50 @@ De tempos em tempos, uma estrela de poder surge no mapa:
 
 ---
 
-## 🖥️ Requisitos e Compilação (Mac)
+## 🖥️ Requisitos e Compilação
 
-Certifique-se de ter a Raylib instalada (`brew install raylib`).
+Este projeto utiliza **CMake** e **FetchContent** para gerenciar dependências automaticamente (Raylib, spdlog, Tracy, GTest). No entanto, algumas bibliotecas do sistema são necessárias dependendo da sua plataforma:
 
-**Para compilar e rodar imediatamente:**
+### 🐧 Linux (Ubuntu/Debian)
+
+Você precisará das bibliotecas de desenvolvimento para X11, OpenGL e Áudio:
+
+```bash
+sudo apt-get update
+sudo apt-get install build-essential git cmake
+sudo apt-get install libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev
+```
+
+### 🍎 macOS
+
+Recomendamos o uso do **Homebrew**:
+
+```bash
+brew install cmake raylib
+```
+
+### 🪟 Windows
+
+- Recomendamos o **Visual Studio 2022** (com C++ Desktop Development) ou **MinGW-w64**.
+- O CMake baixará e compilará a Raylib automaticamente durante a primeira build.
+
+---
+
+## 🛠️ Como Compilar e Rodar
+
+**Para compilar e rodar imediatamente (Linux/Mac):**
 
 ```bash
 make run
+```
+
+**Ou manualmente via CMake:**
+
+```bash
+mkdir build && cd build
+cmake ..
+make
+./RalphArcade
 ```
 
 ---

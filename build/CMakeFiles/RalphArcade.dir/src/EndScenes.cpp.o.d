@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/EndScenes.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/EndScenes.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/EndScenes.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Scene.h \

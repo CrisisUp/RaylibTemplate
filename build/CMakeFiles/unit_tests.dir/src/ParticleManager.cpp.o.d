@@ -1,4 +1,5 @@
 CMakeFiles/unit_tests.dir/src/ParticleManager.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/ParticleManager.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/ParticleManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \

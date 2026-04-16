@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/ConfigManager.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/ConfigManager.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/ConfigManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string \

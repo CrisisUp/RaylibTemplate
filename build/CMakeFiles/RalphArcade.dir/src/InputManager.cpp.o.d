@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/InputManager.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/InputManager.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/InputManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \

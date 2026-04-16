@@ -205,6 +205,19 @@ validate-assets/fast:
 .PHONY : validate-assets/fast
 
 #=============================================================================
+# Target rules for targets named pack-assets
+
+# Build rule for target.
+pack-assets: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pack-assets
+.PHONY : pack-assets
+
+# fast build rule for target.
+pack-assets/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pack-assets.dir/build.make CMakeFiles/pack-assets.dir/build
+.PHONY : pack-assets/fast
+
+#=============================================================================
 # Target rules for targets named RalphArcade
 
 # Build rule for target.
@@ -603,6 +616,33 @@ src/LocalizationManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/LocalizationManager.cpp.s
 .PHONY : src/LocalizationManager.cpp.s
 
+src/Logger.o: src/Logger.cpp.o
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
 src/MenuScene.o: src/MenuScene.cpp.o
 .PHONY : src/MenuScene.o
 
@@ -629,6 +669,33 @@ src/MenuScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/MenuScene.cpp.s
 .PHONY : src/MenuScene.cpp.s
+
+src/OptionsScene.o: src/OptionsScene.cpp.o
+.PHONY : src/OptionsScene.o
+
+# target to build an object file
+src/OptionsScene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.o
+.PHONY : src/OptionsScene.cpp.o
+
+src/OptionsScene.i: src/OptionsScene.cpp.i
+.PHONY : src/OptionsScene.i
+
+# target to preprocess a source file
+src/OptionsScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.i
+.PHONY : src/OptionsScene.cpp.i
+
+src/OptionsScene.s: src/OptionsScene.cpp.s
+.PHONY : src/OptionsScene.s
+
+# target to generate assembly for a file
+src/OptionsScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/OptionsScene.cpp.s
+.PHONY : src/OptionsScene.cpp.s
 
 src/ParticleManager.o: src/ParticleManager.cpp.o
 .PHONY : src/ParticleManager.o
@@ -711,6 +778,33 @@ src/ResourceManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/ResourceManager.cpp.s
 .PHONY : src/ResourceManager.cpp.s
 
+src/Utils.o: src/Utils.cpp.o
+.PHONY : src/Utils.o
+
+# target to build an object file
+src/Utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/Utils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/Utils.cpp.o
+.PHONY : src/Utils.cpp.o
+
+src/Utils.i: src/Utils.cpp.i
+.PHONY : src/Utils.i
+
+# target to preprocess a source file
+src/Utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/Utils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/Utils.cpp.i
+.PHONY : src/Utils.cpp.i
+
+src/Utils.s: src/Utils.cpp.s
+.PHONY : src/Utils.s
+
+# target to generate assembly for a file
+src/Utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RalphArcade.dir/build.make CMakeFiles/RalphArcade.dir/src/Utils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/src/Utils.cpp.s
+.PHONY : src/Utils.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -774,6 +868,7 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... pack-assets"
 	@echo "... uninstall"
 	@echo "... update_mappings"
 	@echo "... validate-assets"
@@ -814,9 +909,15 @@ help:
 	@echo "... src/LocalizationManager.o"
 	@echo "... src/LocalizationManager.i"
 	@echo "... src/LocalizationManager.s"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
 	@echo "... src/MenuScene.o"
 	@echo "... src/MenuScene.i"
 	@echo "... src/MenuScene.s"
+	@echo "... src/OptionsScene.o"
+	@echo "... src/OptionsScene.i"
+	@echo "... src/OptionsScene.s"
 	@echo "... src/ParticleManager.o"
 	@echo "... src/ParticleManager.i"
 	@echo "... src/ParticleManager.s"
@@ -826,6 +927,9 @@ help:
 	@echo "... src/ResourceManager.o"
 	@echo "... src/ResourceManager.i"
 	@echo "... src/ResourceManager.s"
+	@echo "... src/Utils.o"
+	@echo "... src/Utils.i"
+	@echo "... src/Utils.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

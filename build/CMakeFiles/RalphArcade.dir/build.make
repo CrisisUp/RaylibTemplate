@@ -198,10 +198,24 @@ CMakeFiles/RalphArcade.dir/src/LocalizationManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RalphArcade.dir/src/LocalizationManager.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/LocalizationManager.cpp -o CMakeFiles/RalphArcade.dir/src/LocalizationManager.cpp.s
 
+CMakeFiles/RalphArcade.dir/src/Logger.cpp.o: CMakeFiles/RalphArcade.dir/flags.make
+CMakeFiles/RalphArcade.dir/src/Logger.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/Logger.cpp
+CMakeFiles/RalphArcade.dir/src/Logger.cpp.o: CMakeFiles/RalphArcade.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/RalphArcade.dir/src/Logger.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RalphArcade.dir/src/Logger.cpp.o -MF CMakeFiles/RalphArcade.dir/src/Logger.cpp.o.d -o CMakeFiles/RalphArcade.dir/src/Logger.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/Logger.cpp
+
+CMakeFiles/RalphArcade.dir/src/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RalphArcade.dir/src/Logger.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cristiano/Desktop/teste/RaylibTemplate/src/Logger.cpp > CMakeFiles/RalphArcade.dir/src/Logger.cpp.i
+
+CMakeFiles/RalphArcade.dir/src/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RalphArcade.dir/src/Logger.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/Logger.cpp -o CMakeFiles/RalphArcade.dir/src/Logger.cpp.s
+
 CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o: CMakeFiles/RalphArcade.dir/flags.make
 CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/MenuScene.cpp
 CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o: CMakeFiles/RalphArcade.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o -MF CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o.d -o CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/MenuScene.cpp
 
 CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.i: cmake_force
@@ -212,10 +226,24 @@ CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/MenuScene.cpp -o CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.s
 
+CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o: CMakeFiles/RalphArcade.dir/flags.make
+CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/OptionsScene.cpp
+CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o: CMakeFiles/RalphArcade.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o -MF CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o.d -o CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/OptionsScene.cpp
+
+CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cristiano/Desktop/teste/RaylibTemplate/src/OptionsScene.cpp > CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.i
+
+CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/OptionsScene.cpp -o CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.s
+
 CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o: CMakeFiles/RalphArcade.dir/flags.make
 CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/ParticleManager.cpp
 CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o: CMakeFiles/RalphArcade.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o -MF CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o.d -o CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/ParticleManager.cpp
 
 CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.i: cmake_force
@@ -229,7 +257,7 @@ CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.s: cmake_force
 CMakeFiles/RalphArcade.dir/src/Player.cpp.o: CMakeFiles/RalphArcade.dir/flags.make
 CMakeFiles/RalphArcade.dir/src/Player.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/Player.cpp
 CMakeFiles/RalphArcade.dir/src/Player.cpp.o: CMakeFiles/RalphArcade.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/RalphArcade.dir/src/Player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/RalphArcade.dir/src/Player.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RalphArcade.dir/src/Player.cpp.o -MF CMakeFiles/RalphArcade.dir/src/Player.cpp.o.d -o CMakeFiles/RalphArcade.dir/src/Player.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/Player.cpp
 
 CMakeFiles/RalphArcade.dir/src/Player.cpp.i: cmake_force
@@ -243,7 +271,7 @@ CMakeFiles/RalphArcade.dir/src/Player.cpp.s: cmake_force
 CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o: CMakeFiles/RalphArcade.dir/flags.make
 CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/ResourceManager.cpp
 CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o: CMakeFiles/RalphArcade.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o -MF CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o.d -o CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/ResourceManager.cpp
 
 CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.i: cmake_force
@@ -254,10 +282,24 @@ CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/ResourceManager.cpp -o CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.s
 
+CMakeFiles/RalphArcade.dir/src/Utils.cpp.o: CMakeFiles/RalphArcade.dir/flags.make
+CMakeFiles/RalphArcade.dir/src/Utils.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/Utils.cpp
+CMakeFiles/RalphArcade.dir/src/Utils.cpp.o: CMakeFiles/RalphArcade.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/RalphArcade.dir/src/Utils.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RalphArcade.dir/src/Utils.cpp.o -MF CMakeFiles/RalphArcade.dir/src/Utils.cpp.o.d -o CMakeFiles/RalphArcade.dir/src/Utils.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/Utils.cpp
+
+CMakeFiles/RalphArcade.dir/src/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RalphArcade.dir/src/Utils.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cristiano/Desktop/teste/RaylibTemplate/src/Utils.cpp > CMakeFiles/RalphArcade.dir/src/Utils.cpp.i
+
+CMakeFiles/RalphArcade.dir/src/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RalphArcade.dir/src/Utils.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cristiano/Desktop/teste/RaylibTemplate/src/Utils.cpp -o CMakeFiles/RalphArcade.dir/src/Utils.cpp.s
+
 CMakeFiles/RalphArcade.dir/src/main.cpp.o: CMakeFiles/RalphArcade.dir/flags.make
 CMakeFiles/RalphArcade.dir/src/main.cpp.o: /Users/cristiano/Desktop/teste/RaylibTemplate/src/main.cpp
 CMakeFiles/RalphArcade.dir/src/main.cpp.o: CMakeFiles/RalphArcade.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/RalphArcade.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/RalphArcade.dir/src/main.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RalphArcade.dir/src/main.cpp.o -MF CMakeFiles/RalphArcade.dir/src/main.cpp.o.d -o CMakeFiles/RalphArcade.dir/src/main.cpp.o -c /Users/cristiano/Desktop/teste/RaylibTemplate/src/main.cpp
 
 CMakeFiles/RalphArcade.dir/src/main.cpp.i: cmake_force
@@ -279,42 +321,49 @@ RalphArcade_OBJECTS = \
 "CMakeFiles/RalphArcade.dir/src/GameplayScene.cpp.o" \
 "CMakeFiles/RalphArcade.dir/src/InputManager.cpp.o" \
 "CMakeFiles/RalphArcade.dir/src/LocalizationManager.cpp.o" \
+"CMakeFiles/RalphArcade.dir/src/Logger.cpp.o" \
 "CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o" \
+"CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o" \
 "CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o" \
 "CMakeFiles/RalphArcade.dir/src/Player.cpp.o" \
 "CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o" \
+"CMakeFiles/RalphArcade.dir/src/Utils.cpp.o" \
 "CMakeFiles/RalphArcade.dir/src/main.cpp.o"
 
 # External object files for target RalphArcade
 RalphArcade_EXTERNAL_OBJECTS =
 
-RalphArcade: CMakeFiles/RalphArcade.dir/src/Boss.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/ConfigManager.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/EndScenes.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/Enemy.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/FloatingTextManager.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/Game.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/GameplayScene.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/InputManager.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/LocalizationManager.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/Player.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/src/main.cpp.o
-RalphArcade: CMakeFiles/RalphArcade.dir/build.make
-RalphArcade: _deps/raylib-build/raylib/libraylib.a
-RalphArcade: _deps/spdlog-build/libspdlogd.a
-RalphArcade: _deps/tracy-build/libTracyClient.a
-RalphArcade: _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
-RalphArcade: CMakeFiles/RalphArcade.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable RalphArcade"
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/Boss.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/ConfigManager.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/EndScenes.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/Enemy.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/FloatingTextManager.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/Game.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/GameplayScene.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/InputManager.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/LocalizationManager.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/Logger.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/MenuScene.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/OptionsScene.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/ParticleManager.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/Player.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/ResourceManager.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/Utils.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/src/main.cpp.o
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/build.make
+RalphArcade.app/Contents/MacOS/RalphArcade: _deps/raylib-build/raylib/libraylib.a
+RalphArcade.app/Contents/MacOS/RalphArcade: _deps/spdlog-build/libspdlogd.a
+RalphArcade.app/Contents/MacOS/RalphArcade: _deps/tracy-build/libTracyClient.a
+RalphArcade.app/Contents/MacOS/RalphArcade: _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
+RalphArcade.app/Contents/MacOS/RalphArcade: CMakeFiles/RalphArcade.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cristiano/Desktop/teste/RaylibTemplate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable RalphArcade.app/Contents/MacOS/RalphArcade"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RalphArcade.dir/link.txt --verbose=$(VERBOSE)
-	/opt/homebrew/bin/cmake -E create_symlink /Users/cristiano/Desktop/teste/RaylibTemplate/resources /Users/cristiano/Desktop/teste/RaylibTemplate/build/resources
-	/opt/homebrew/bin/cmake -E create_symlink /Users/cristiano/Desktop/teste/RaylibTemplate/config.txt /Users/cristiano/Desktop/teste/RaylibTemplate/build/config.txt
+	/opt/homebrew/bin/cmake -E create_symlink /Users/cristiano/Desktop/teste/RaylibTemplate/resources /Users/cristiano/Desktop/teste/RaylibTemplate/build/RalphArcade.app/Contents/MacOS/resources
+	/opt/homebrew/bin/cmake -E create_symlink /Users/cristiano/Desktop/teste/RaylibTemplate/config.txt /Users/cristiano/Desktop/teste/RaylibTemplate/build/RalphArcade.app/Contents/MacOS/config.txt
+	/opt/homebrew/bin/cmake -E copy /Users/cristiano/Desktop/teste/RaylibTemplate/resources.pak /Users/cristiano/Desktop/teste/RaylibTemplate/build/RalphArcade.app/Contents/MacOS/resources.pak
 
 # Rule to build all files generated by this target.
-CMakeFiles/RalphArcade.dir/build: RalphArcade
+CMakeFiles/RalphArcade.dir/build: RalphArcade.app/Contents/MacOS/RalphArcade
 .PHONY : CMakeFiles/RalphArcade.dir/build
 
 CMakeFiles/RalphArcade.dir/clean:

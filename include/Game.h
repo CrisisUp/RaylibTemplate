@@ -29,6 +29,10 @@ private:
     float fadeAlpha;
     bool isFading, fadeOut;
     std::unique_ptr<Scene> nextScenePending;
+
+    // Resolution Independence
+    RenderTexture2D target;
+    Rectangle screenRect;
 };
 
 #endif

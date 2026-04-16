@@ -1,4 +1,5 @@
 CMakeFiles/RalphArcade.dir/src/Player.cpp.o: \
+  /Library/Developer/CommandLineTools/usr/lib/clang/21/share/asan_ignorelist.txt \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/Player.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Player.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \
