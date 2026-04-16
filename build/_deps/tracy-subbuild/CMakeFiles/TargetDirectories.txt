@@ -1,0 +1,3 @@
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-subbuild/CMakeFiles/tracy-populate.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-subbuild/CMakeFiles/edit_cache.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/tracy-subbuild/CMakeFiles/rebuild_cache.dir

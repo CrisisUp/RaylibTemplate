@@ -4,20 +4,20 @@
 language=pt
 
 # Player Settings
-playerBaseSpeed=300.0
+playerBaseSpeed=200.0
 invulnDuration=1.5
 dashDuration=0.15
 dashCooldown=0.6
-dashSpeedMult=4.5
+dashSpeedMult=3.0
 
 # Enemy Settings
-enemyBouncerSpeed=150.0
-enemyHunterSpeed=80.0
-levelSpeedIncrement=0.02
+enemyBouncerSpeed=60.0
+enemyHunterSpeed=30.0
+levelSpeedIncrement=0.01
 
 # Boss Settings
 bossMaxHp=10
-bossSpeed=120.0
+bossSpeed=100.0
 
 # Visual Settings
 shakeIntensityBase=10.0

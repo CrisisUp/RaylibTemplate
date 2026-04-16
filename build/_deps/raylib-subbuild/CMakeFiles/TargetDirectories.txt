@@ -1,0 +1,3 @@
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-subbuild/CMakeFiles/raylib-populate.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-subbuild/CMakeFiles/edit_cache.dir
+/Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-subbuild/CMakeFiles/rebuild_cache.dir

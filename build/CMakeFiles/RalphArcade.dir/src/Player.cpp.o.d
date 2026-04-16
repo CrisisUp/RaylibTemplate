@@ -2,7 +2,7 @@ CMakeFiles/RalphArcade.dir/src/Player.cpp.o: \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/Player.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Player.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \
-  /opt/homebrew/include/raylib.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-src/src/raylib.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/__stdarg_header_macro.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \
@@ -805,4 +805,4 @@ CMakeFiles/RalphArcade.dir/src/Player.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/default_searcher.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
-  /opt/homebrew/include/raymath.h
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-src/src/raymath.h

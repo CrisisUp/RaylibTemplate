@@ -1,0 +1,29 @@
+---
+Checks: >
+  bugprone-*,
+  cert-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-pro-type-vararg,
+  -readability-identifier-length,
+  -modernize-use-trailing-return-type,
+  -cppcoreguidelines-special-member-functions,
+  -hicpp-special-member-functions,
+  -cppcoreguidelines-owning-memory,
+  -modernize-avoid-c-arrays,
+  -cppcoreguidelines-avoid-c-arrays,
+  -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers
+
+WarningsAsErrors: ""
+HeaderFilterRegex: 'include/.*'
+AnalyzeTemporaryDtors: false
+CheckOptions:
+  - key:             readability-function-size.LineThreshold
+    value:           '100'
+  - key:             modernize-use-auto.MinTypeNameLength
+    value:           '5'
+...

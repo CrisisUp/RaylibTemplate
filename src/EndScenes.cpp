@@ -1,12 +1,14 @@
 #include "EndScenes.h"
 #include "InputManager.h"
 #include "ResourceManager.h"
+#include "InputManager.h"
 #include "LocalizationManager.h"
 #include "GameplayScene.h"
 
 LevelUpScene::LevelUpScene(Game* g) : game(g) {}
 void LevelUpScene::Update(float dt) {
     if (InputManager::Instance().IsActionPressed(ACTION_CONFIRM)) {
+        game->level++;
         game->ChangeScene(std::make_unique<GameplayScene>(game));
     }
 }
@@ -21,6 +23,9 @@ void LevelUpScene::Draw() {
 LostScene::LostScene(Game* g) : game(g) {}
 void LostScene::Update(float dt) {
     if (InputManager::Instance().IsActionPressed(ACTION_CONFIRM)) {
+        game->score = 0;
+        game->level = 1;
+        game->dispScore = 0;
         game->ChangeScene(std::make_unique<GameplayScene>(game));
     }
 }

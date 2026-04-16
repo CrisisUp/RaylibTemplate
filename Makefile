@@ -5,7 +5,7 @@ TARGET = RalphArcade
 
 all:
 	mkdir -p $(BUILD_DIR)
-	cd $(BUILD_DIR) && cmake .. && make
+	cd $(BUILD_DIR) && cmake .. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && make
 
 run: all
 	cd $(BUILD_DIR) && ./$(TARGET)

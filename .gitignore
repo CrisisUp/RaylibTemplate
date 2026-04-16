@@ -20,3 +20,11 @@ x64/
 
 # Save files
 highscore.txt
+
+# Ignorar pastas de compilação
+build/
+bin/
+obj/
+
+# Ignorar arquivos do macOS
+.DS_Store

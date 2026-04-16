@@ -9,6 +9,7 @@ void InputManager::Init() {
     bindings[ACTION_DASH]  = KEY_SPACE;
     bindings[ACTION_START] = KEY_ENTER;
     bindings[ACTION_CONFIRM] = KEY_ENTER;
+    bindings[ACTION_PAUSE] = KEY_P;
 }
 
 bool InputManager::IsActionDown(GameAction action) {

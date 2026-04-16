@@ -2,7 +2,7 @@ CMakeFiles/RalphArcade.dir/src/FloatingTextManager.cpp.o: \
   /Users/cristiano/Desktop/teste/RaylibTemplate/src/FloatingTextManager.cpp \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/FloatingTextManager.h \
   /Users/cristiano/Desktop/teste/RaylibTemplate/include/Common.h \
-  /opt/homebrew/include/raylib.h \
+  /Users/cristiano/Desktop/teste/RaylibTemplate/build/_deps/raylib-src/src/raylib.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/__stdarg_header_macro.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \

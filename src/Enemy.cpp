@@ -10,8 +10,10 @@ void Enemy::Update(float dt, Vector2 playerPos, float mult, bool slow) {
     float sMult = mult * (slow ? 0.4f : 1.0f);
     
     if (type == BOUNCER) {
-        pos.x += speed.x * sMult * dt;
-        pos.y += speed.y * sMult * dt;
+        // Use speed.x as the total speed for BOUNCER to keep it consistent
+        Vector2 velocity = Vector2Scale(Vector2Normalize(speed), speed.x * sMult);
+        pos.x += velocity.x * dt;
+        pos.y += velocity.y * dt;
 
         if (pos.x <= 0) { pos.x = 0; speed.x *= -1; }
         if (pos.x + width >= SCREEN_X) { pos.x = SCREEN_X - width; speed.x *= -1; }
@@ -19,7 +21,8 @@ void Enemy::Update(float dt, Vector2 playerPos, float mult, bool slow) {
         if (pos.y + height >= SCREEN_Y) { pos.y = SCREEN_Y - height; speed.y *= -1; }
     } else {
         Vector2 dir = Vector2Normalize(Vector2Subtract(playerPos, pos));
-        pos = Vector2Add(pos, Vector2Scale(dir, 80.0f * sMult * dt));
+        // Use speed.x as the scalar speed for HUNTER
+        pos = Vector2Add(pos, Vector2Scale(dir, speed.x * sMult * dt));
     }
 }
 

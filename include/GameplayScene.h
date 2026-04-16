@@ -31,6 +31,7 @@ private:
     float flashAlpha;
     float shakeTimer, shakeIntensity;
     float comboTimer;
+    bool isPaused = false;
 
     void ResetLevel();
     void TriggerImpact(float duration, float intensity, float flash);

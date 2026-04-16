@@ -4,6 +4,7 @@
 #include "InputManager.h"
 #include "ConfigManager.h"
 #include "LocalizationManager.h"
+#include "Profiling.h"
 #include <fstream>
 
 Game::Game() {
@@ -19,6 +20,9 @@ Game::Game() {
     music = ResourceManager::Instance().GetMusic("resources/sound/arcade.wav");
     
     hiScore = LoadHighScore();
+    score = 0;
+    level = 1;
+    dispScore = 0;
     SetTargetFPS(60);
     
     fadeAlpha = 0;
@@ -42,7 +46,10 @@ void Game::ChangeScene(std::unique_ptr<Scene> newScene) {
 }
 
 void Game::Update() {
+    PROFILE_ZONE_SCOPED;
     float dt = GetFrameTime();
+
+    UpdateMusicStream(music);
 
     if (isFading) {
         fadeAlpha += dt * (fadeOut ? 3.0f : -3.0f);
@@ -62,6 +69,7 @@ void Game::Update() {
 }
 
 void Game::Draw() {
+    PROFILE_ZONE_SCOPED;
     BeginDrawing();
     ClearBackground(BLACK);
     

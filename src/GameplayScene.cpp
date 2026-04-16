@@ -4,13 +4,11 @@
 #include "ConfigManager.h"
 #include "LocalizationManager.h"
 #include "EndScenes.h"
+#include "Profiling.h"
 #include <raymath.h>
 
 GameplayScene::GameplayScene(Game* g) : game(g) {
     player = std::make_unique<Player>(ResourceManager::Instance().GetTexture("resources/Ralph.png"));
-    game->score = 0;
-    game->level = 1;
-    game->dispScore = 0;
     freezeTimer = 0;
     flashAlpha = 0;
     shakeTimer = 0;
@@ -29,7 +27,7 @@ void GameplayScene::ResetLevel() {
         boss.active = true;
         boss.maxHp = ConfigManager::Instance().GetInt("bossMaxHp", 10);
         boss.hp = boss.maxHp;
-        boss.speed = ConfigManager::Instance().GetFloat("bossSpeed", 120.0f);
+        boss.speed = ConfigManager::Instance().GetFloat("bossSpeed", 100.0f);
     } else {
         boss.active = false;
         for (int i = 0; i < GetRandomValue(3, 6); i++) {
@@ -48,13 +46,18 @@ void GameplayScene::ResetLevel() {
         }
     }
 
-    float bounceSpd = ConfigManager::Instance().GetFloat("enemyBouncerSpeed", 150.0f);
+    float bounceSpd = ConfigManager::Instance().GetFloat("enemyBouncerSpeed", 60.0f);
+    float hunterSpd = ConfigManager::Instance().GetFloat("enemyHunterSpeed", 30.0f);
     Texture2D texObs = ResourceManager::Instance().GetTexture("resources/Obstacle.png");
     enemies = {
-        {{200, 400}, {bounceSpd, bounceSpd}, (float)texObs.width, (float)texObs.height, BOUNCER},
-        {{900, 200}, {-bounceSpd, bounceSpd}, (float)texObs.width, (float)texObs.height, BOUNCER},
-        {{600, 100}, {100, 100}, (float)texObs.width, (float)texObs.height, HUNTER}
+        {{200, 400}, {1.0f, 1.0f}, (float)texObs.width, (float)texObs.height, BOUNCER}, // Initial direction normalized
+        {{900, 200}, {-1.0f, 1.0f}, (float)texObs.width, (float)texObs.height, BOUNCER},
+        {{600, 100}, {hunterSpd, hunterSpd}, (float)texObs.width, (float)texObs.height, HUNTER}
     };
+    // Set actual speed for bouncers
+    enemies[0].speed = {bounceSpd, bounceSpd};
+    enemies[1].speed = {-bounceSpd, bounceSpd};
+    
     pUp.active = false;
     pUpTimer = 5.0f;
     pm.Clear();
@@ -69,6 +72,10 @@ void GameplayScene::TriggerImpact(float duration, float intensity, float flash) 
 }
 
 void GameplayScene::Update(float dt) {
+    PROFILE_ZONE_SCOPED;
+    if (InputManager::Instance().IsActionPressed(ACTION_PAUSE)) isPaused = !isPaused;
+    if (isPaused) return;
+
     if (freezeTimer > 0) { freezeTimer -= dt; return; }
     if (flashAlpha > 0) flashAlpha -= dt * 5.0f;
     if (shakeTimer > 0) shakeTimer -= dt;
@@ -76,7 +83,8 @@ void GameplayScene::Update(float dt) {
     
     game->dispScore = Lerp(game->dispScore, (float)game->score, 0.1f);
 
-    player->Update(dt, 300.0f, obstacles, 40, 40, pm);
+    float pSpd = ConfigManager::Instance().GetFloat("playerBaseSpeed", 200.0f);
+    player->Update(dt, pSpd, obstacles, 40, 40, pm);
     pm.Update(dt);
     ftm.Update(dt);
     
@@ -123,7 +131,8 @@ void GameplayScene::Update(float dt) {
     }
 
     // Enemies
-    float eMult = 1.0f + (game->level - 1) * 0.02f;
+    float eInc = ConfigManager::Instance().GetFloat("levelSpeedIncrement", 0.01f);
+    float eMult = 1.0f + (game->level - 1) * eInc;
     for (auto& e : enemies) {
         e.Update(dt, player->pos, eMult, player->activePower == SLOW);
         if (e.active && CheckCollisionRecs(player->GetRect(), e.GetRect())) {
@@ -164,6 +173,7 @@ void GameplayScene::Update(float dt) {
 }
 
 void GameplayScene::Draw() {
+    PROFILE_ZONE_SCOPED;
     Vector2 shake = {0,0};
     if (shakeTimer > 0) shake = {(float)GetRandomValue(-shakeIntensity, shakeIntensity), (float)GetRandomValue(-shakeIntensity, shakeIntensity)};
     
@@ -196,4 +206,12 @@ void GameplayScene::Draw() {
     if (player->dashCooldown <= 0) DrawText(LocalizationManager::Instance().Get("HUD_DASH_READY").c_str(), 50, 620, 15, SKYBLUE);
     
     if (flashAlpha > 0) DrawRectangle(0,0,SCREEN_X,SCREEN_Y, Fade(WHITE, flashAlpha));
+    
+    if (isPaused) {
+        DrawRectangle(0, 0, SCREEN_X, SCREEN_Y, Fade(BLACK, 0.5f));
+        std::string pauseText = LocalizationManager::Instance().Get("MSG_PAUSED");
+        int fontSize = 60;
+        int textWidth = MeasureText(pauseText.c_str(), fontSize);
+        DrawText(pauseText.c_str(), SCREEN_X/2 - textWidth/2, SCREEN_Y/2 - fontSize/2, fontSize, RAYWHITE);
+    }
 }
