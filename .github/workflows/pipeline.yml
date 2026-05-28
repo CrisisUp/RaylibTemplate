@@ -115,7 +115,7 @@ jobs:
       uses: mymindstorm/setup-emsdk@v14
 
     - name: Configure CMake (Web)
-      run: emcmake cmake -B build-web -DCMAKE_BUILD_TYPE=Release
+      run: emcmake cmake -B build-web -DCMAKE_BUILD_TYPE=Release -DCMAKE_HAVE_THREADS_LIBRARY=1 -DCMAKE_USE_PTHREADS_INIT=1 -DCMAKE_THREAD_LIBS_INIT=""
 
     - name: Build Web Project
       run: cmake --build build-web
