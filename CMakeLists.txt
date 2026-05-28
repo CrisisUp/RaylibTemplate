@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.14) # Minimum for FetchContent
 project(RalphArcade VERSION 1.0.0 LANGUAGES CXX)
 
+# Força a aceitação de políticas legadas (>= 3.5) para que o CMake 3.30+ consiga compilar o Raylib
+set(CMAKE_POLICY_VERSION_MINIMUM "3.5" CACHE STRING "Minimum CMake policy version" FORCE)
+
 if(POLICY CMP0135)
   cmake_policy(SET CMP0135 NEW)
 endif()
